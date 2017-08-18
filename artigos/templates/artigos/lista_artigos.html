@@ -1,17 +1,13 @@
-<html>
-				<head>
-								<title>Mairimed</title>
-				</head>
-				<body>
-								<div>
-												<h1><a	href="">Mairimed</a></h1>
-								</div>
-                {% for artigo in artigos %}
-								<div>
-                  <p> publicado: {{ artigo.data_de_publicacao }}</p>
-                  <h1><a href="">{{ artigo.titulo }}</a></h1>
-                  <p>{{ artigo.texto|linebreaksbr }}</p>
-								</div>
-                {% endfor %}
-				</body>
-</html>
+{% extends 'artigos/base.html' %}
+
+{% block content %}
+  {% for artigo in artigos %}
+    <div class="artigo">
+      <div class="date">
+        {{ artigo.data_de_publicacao }}
+      </div>
+      <h1><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h1>
+      <p>{{ artigo.texto|linebreaksbr }}</p>
+    </div>
+  {% endfor %}
+{% endblock content %}
