@@ -7,7 +7,6 @@
         {{ artigo.data_de_publicacao }}
       </div>
       <h1><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h1>
-      <p>{{ artigo.texto|linebreaksbr }}</p>
     </div>
   {% endfor %}
 {% endblock content %}
