@@ -1,10 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from django.utils import timezone
 from .models import Artigo
 from django.shortcuts import render, get_object_or_404
 from .forms import ArtigoForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
+from .models import DicioMed
+
+def inicio(request):
+    return render(request, 'mairimed/inicio.html')
+
+def lista_termos(request):
+    termos = DicioMed.objects.filter(definicao__isnull=False).order_by('nome')
+    return render(request, 'termos/lista_termos.html', {'termos' : termos})
 
 def lista_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')

@@ -1,0 +1,9 @@
+{% extends 'artigos/base.html' %}
+
+{% block content %}
+  {% for termos in termos %}
+    <div class="artigo">
+      <h1><a href="{% url 'lista_termos' %}">{{ termos.nome }}</a></h1>
+    </div>
+  {% endfor %}
+{% endblock content %}

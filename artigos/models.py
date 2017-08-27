@@ -7,7 +7,6 @@ class Artigo(models.Model):
     texto = models.TextField()
     data_de_criacao = models.DateTimeField(default=timezone.now)
     data_de_publicacao = models.DateTimeField(blank=True, null=True)
-
     #favoritos = models.IntegerField()
 
     def publicar(self):
@@ -16,11 +15,11 @@ class Artigo(models.Model):
 
     def __str__(self):
         return self.titulo
-"""
-class Estudante(models.Models):
-    nome = models.CharField(max_length=120)
-    instituicao = models.TextField()
 
-    def __unicode__(self):
+class DicioMed(models.Model):
+    nome = models.CharField(max_length=50)
+    origem = models.CharField(max_length=50)
+    definicao = models.CharField(max_length=50)
+
+    def __str__(self):
         return self.nome
-"""
