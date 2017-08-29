@@ -6,6 +6,7 @@ from .forms import ArtigoForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from .models import DicioMed
+from .models import DicioFar
 
 def inicio(request):
     return render(request, 'mairimed/inicio.html')
@@ -13,6 +14,14 @@ def inicio(request):
 def lista_termos(request):
     termos = DicioMed.objects.filter(definicao__isnull=False).order_by('nome')
     return render(request, 'termos/lista_termos.html', {'termos' : termos})
+
+def lista_farmacos(request):
+    farmacos = DicioFar.objects.filter(nome__isnull=False).order_by('nome')
+    return render(request, 'farmacos/lista_farmacos.html', {'farmacos' : farmacos})
+
+def detalhe_farmacos(request, pk):
+    farmacos = get_object_or_404(Artigo, pk=pk)
+    return render(request, 'farmacos/detalhe_farmacos.html', {'farmacos': farmacos})
 
 def lista_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')

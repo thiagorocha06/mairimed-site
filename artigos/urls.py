@@ -12,5 +12,8 @@ urlpatterns = [
     url(r'^artigo/(?P<pk>\d+)/publicar/$',	views.publicar_artigo,	name='publicar_artigo'),
     url(r'^artigo/(?P<pk>\d+)/remover/$', views.remover_artigo, name='remover_artigo'),
 
-    url(r'^termos/$', views.lista_termos, name='lista_termos'),
+    url(r'^termos/lista$', views.lista_termos, name='lista_termos'),
+
+    url(r'^farmacos/lista$', views.lista_farmacos, name='lista_farmacos'),
+    url(r'^farmacos/(?P<pk>\d+)/$', views.detalhe_farmacos, name='detalhe_farmacos'),
 ]
