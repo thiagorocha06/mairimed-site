@@ -1,0 +1,25 @@
+{% extends 'mairimed/base.html' %}
+
+{% block content %}
+
+  <h1>Resumos de Medicina</h1>
+
+  <div class="artigo">
+    <h2><a href="{% url 'cardiologia_artigos' %}">Abdome</a></h2>
+  </div>
+  <div class="artigo">
+    <h2><a href="{% url 'cardiologia_artigos' %}">Cardiologia</a></h2>
+  </div>
+  <div class="artigo">
+    <h2><a href="{% url 'cardiologia_artigos' %}">Endocrinologia</a></h2>
+  </div>
+  <div class="artigo">
+    <h2><a href="{% url 'cardiologia_artigos' %}">Nefrologia</a></h2>
+  </div>
+  <div class="artigo">
+    <h2><a href="{% url 'cardiologia_artigos' %}">Pediatria</a></h2>
+  </div>
+  <div class="artigo">
+    <h2><a href="{% url 'cardiologia_artigos' %}">Pneumologia</a></h2>
+  </div>
+{% endblock content %}

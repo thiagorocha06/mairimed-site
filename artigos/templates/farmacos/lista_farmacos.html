@@ -1,9 +1,12 @@
 {% extends 'mairimed/base.html' %}
 
 {% block content %}
-  {% for farmacos in farmacos %}
+
+<h1>Dicionário Farmacêutico</h1>
+
+  {% for farmaco in farmacos %}
     <div class="artigo">
-      <h1><a href="{% url 'detalhe_farmacos' pk=artigo.pk %}">{{ farmacos.nome }}</a></h1>
+      <h2><a href="{% url 'detalhe_farmacos' pk=farmaco.pk %}">{{ farmaco.nome }}</a></h2>
     </div>
   {% endfor %}
 {% endblock content %}

@@ -2,7 +2,44 @@
 
 {% block content %}
     <div class="artigo">
-        <h1>{{ diciofar.nome }}</h1>
-        <p>{{ diciofar.classe|linebreaksbr }}</p>
+        <h1>{{ farmaco.nome }}</h1>
+        <h2>Classe</h2>
+        <p>{{ farmaco.classe|linebreaksbr }}</p>
+        <h2>Subclasse</h2>
+        <p>{{ farmaco.subclasse|linebreaksbr }}</p>
+        <h2>Marcas</h2>
+        <p>{{ farmaco.marcas|linebreaksbr }}</p>
+        <h2>Farmacodinamica</h2>
+        <p>{{ farmaco.farmacodinamica|linebreaksbr }}</p>
+        <h2>Farmacocinetica</h2>
+        <p>{{ farmaco.farmacocinetica|linebreaksbr }}</p>
+        <h2>Absorção</h2>
+        <p>{{ farmaco.absorcao|linebreaksbr }}</p>
+        <h2>Distribuição</h2>
+        <p>{{ farmaco.distribuicao|linebreaksbr }}</p>
+        <h2>Metabolismo</h2>
+        <p>{{ farmaco.metabolismo|linebreaksbr }}</p>
+        <h2>Eliminação</h2>
+        <p>{{ farmaco.eliminacao|linebreaksbr }}</p>
+        <h2>Indicações</h2>
+        <p>{{ farmaco.indicacoes|linebreaksbr }}</p>
+        <h2>Posologia</h2>
+        <p>{{ farmaco.posologia|linebreaksbr }}</p>
+        <h2>Pediatria</h2>
+        <p>{{ farmaco.pediatria|linebreaksbr }}</p>
+        <h2>Administração</h2>
+        <p>{{ farmaco.administracao|linebreaksbr }}</p>
+        <h2>Reações adversas muito comuns</h2>
+        <p>{{ farmaco.rmuitocomum|linebreaksbr }}</p>
+        <h2>Reações adversas comuns</h2>
+        <p>{{ farmaco.rcomum|linebreaksbr }}</p>
+        <h2>Reações adversas incomuns</h2>
+        <p>{{ farmaco.rincomum|linebreaksbr }}</p>
+        <h2>Reações adversas raras</h2>
+        <p>{{ farmaco.rrara|linebreaksbr }}</p>
+        <h2>Reações adversas muito raras</h2>
+        <p>{{ farmaco.rmuitorara|linebreaksbr }}</p>
+        <h2>Reações adversas com frequência não definida</h2>
+        <p>{{ farmaco.rnaodefinida|linebreaksbr }}</p>
     </div>
 {% endblock %}

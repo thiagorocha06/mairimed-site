@@ -1,9 +1,12 @@
 {% extends 'mairimed/base.html' %}
 
 {% block content %}
-  {% for termos in termos %}
+
+<h1>Termos Médicos</h1>
+
+  {% for termo in termos %}
     <div class="artigo">
-      <h1><a href="{% url 'lista_termos' %}">{{ termos.nome }}</a></h1>
+      <h2><a href="{% url 'detalhe_termos' pk=termo.pk %}">{{ termo.nome }}</a></h2>
     </div>
   {% endfor %}
 {% endblock content %}

@@ -3,6 +3,7 @@ from django.utils import timezone
 
 class Artigo(models.Model):
     author = models.ForeignKey('auth.User')
+    categoria = models.CharField(max_length=200, blank=True, null=True)
     titulo = models.CharField(max_length=200)
     texto = models.TextField()
     data_de_criacao = models.DateTimeField(default=timezone.now)

@@ -19,10 +19,14 @@
             <div class="container">
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="{% url 'inicio' %}">Início</a></li>
-                  <li><a href="{% url 'lista_artigos' %}">Resumos Médicos</a></li>
-                  <li><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></li>
-                  <li><a href="{% url 'lista_termos' %}">Termos Médicos</a></li>
+                  {% url 'inicio' as inicio %}
+                  {% url 'categorias_artigos' as categorias_artigos %}
+                  {% url 'lista_farmacos' as lista_farmacos %}
+                  {% url 'lista_termos' as lista_termos %}
+                  <li {% if request.path == inicio %} class="active" {% endif %}><a href="{% url 'inicio' %}">Início</a></li>
+                  <li {% if request.path == categorias_artigos %} class="active" {% endif %}><a href="{% url 'categorias_artigos' %}">Resumos de Medicina</a></li>
+                  <li {% if request.path == lista_farmacos %} class="active" {% endif %}><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></li>
+                  <li {% if request.path == lista_termos %} class="active" {% endif %}><a href="{% url 'lista_termos' %}">Termos Médicos</a></li>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
