@@ -3,9 +3,12 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
 class Estudante(models.Model):
-    nome = models.OneToOneField(User)
+    usuario = models.OneToOneField(User)
+    primeiro_nome = models.CharField(max_length=50, default='')
+    ultimo_nome = models.CharField(max_length=50, default='')
     instituicao = models.CharField(max_length=30, default='')
     semestre = models.CharField(max_length=10, default='')
+    artigos_favoritos = models.ManyToManyField(Artigo, related_name='favorited_by')
 
 def criar_estudante(sender, **kwargs):
     if kwargs['created']:

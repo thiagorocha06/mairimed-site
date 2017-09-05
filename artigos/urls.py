@@ -5,7 +5,13 @@ urlpatterns = [
     url(r'^$', views.inicio, name='inicio'),
 
     url(r'^artigo/categorias/$', views.categorias_artigos, name='categorias_artigos'),
+    url(r'^artigo/abdome/$', views.abdome_artigos, name='abdome_artigos'),
     url(r'^artigo/cardiologia/$', views.cardiologia_artigos, name='cardiologia_artigos'),
+    url(r'^artigo/endocrinologia/$', views.endocrinologia_artigos, name='endocrinologia_artigos'),
+    url(r'^artigo/nefrologia/$', views.nefrologia_artigos, name='nefrologia_artigos'),
+    url(r'^artigo/pediatria/$', views.pediatria_artigos, name='pediatria_artigos'),
+    url(r'^artigo/pneumologia/$', views.pneumologia_artigos, name='pneumologia_artigos'),
+
     url(r'^artigo/(?P<pk>\d+)/$', views.detalhe_artigo, name='detalhe_artigo'),
     url(r'^artigo/novo/$', views.novo_artigo, name='novo_artigo'),
     url(r'^artigo/(?P<pk>\d+)/edicao/$', views.edicao_artigo, name='edicao_artigo'),

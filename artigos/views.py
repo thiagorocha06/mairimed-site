@@ -1,6 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 from django.utils import timezone
-from .models import Artigo, DicioMed, DicioFar
+from .models import Artigo, Termo, Farmaco
 from django.shortcuts import render, get_object_or_404
 from .forms import ArtigoForm
 from django.shortcuts import redirect
@@ -9,28 +9,48 @@ from django.contrib.auth.decorators import login_required
 def inicio(request):
     return render(request, 'mairimed/inicio.html')
 
-def lista_termos(request):
-    termos = DicioMed.objects.filter(definicao__isnull=False).order_by('nome')
-    return render(request, 'termos/lista_termos.html', {'termos' : termos})
-
-def detalhe_termos(request, pk):
-    termo = get_object_or_404(DicioMed, pk=pk)
-    return render(request, 'termos/detalhe_termos.html', {'termo': termo})
-
 def lista_farmacos(request):
-    farmacos = DicioFar.objects.filter(nome__isnull=False).order_by('nome')
+    farmacos = Farmaco.objects.filter(nome__isnull=False).order_by('nome')
     return render(request, 'farmacos/lista_farmacos.html', {'farmacos' : farmacos})
 
 def detalhe_farmacos(request, pk):
-    farmaco = get_object_or_404(DicioFar, pk=pk)
+    farmaco = get_object_or_404(Farmaco, pk=pk)
     return render(request, 'farmacos/detalhe_farmacos.html', {'farmaco': farmaco})
+
+def lista_termos(request):
+    termos = Termo.objects.filter(definicao__isnull=False).order_by('nome')
+    return render(request, 'termos/lista_termos.html', {'termos' : termos})
+
+def detalhe_termos(request, pk):
+    termo = get_object_or_404(Termo, pk=pk)
+    return render(request, 'termos/detalhe_termos.html', {'termo': termo})
 
 def categorias_artigos(request):
     return render(request, 'artigos/categorias_artigos.html')
 
+def abdome_artigos(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/abdome_artigos.html', {'artigos' : artigos})
+
 def cardiologia_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
     return render(request, 'artigos/cardiologia_artigos.html', {'artigos' : artigos})
+
+def endocrinologia_artigos(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/endocrinologia_artigos.html', {'artigos' : artigos})
+
+def nefrologia_artigos(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/nefrologia_artigos.html', {'artigos' : artigos})
+
+def pediatria_artigos(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/pediatria_artigos.html', {'artigos' : artigos})
+
+def pneumologia_artigos(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/pneumologia_artigos.html', {'artigos' : artigos})
 
 def detalhe_artigo(request, pk):
     artigo = get_object_or_404(Artigo, pk=pk)

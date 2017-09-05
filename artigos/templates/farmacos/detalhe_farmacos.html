@@ -3,43 +3,100 @@
 {% block content %}
     <div class="artigo">
         <h1>{{ farmaco.nome }}</h1>
+
+        {% if farmaco.classe %}
         <h2>Classe</h2>
         <p>{{ farmaco.classe|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.subclasse %}
         <h2>Subclasse</h2>
         <p>{{ farmaco.subclasse|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.marcas %}
         <h2>Marcas</h2>
         <p>{{ farmaco.marcas|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.farmacodinamica %}
         <h2>Farmacodinamica</h2>
         <p>{{ farmaco.farmacodinamica|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.farmacocinetica %}
         <h2>Farmacocinetica</h2>
         <p>{{ farmaco.farmacocinetica|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.absorcao %}
         <h2>Absorção</h2>
         <p>{{ farmaco.absorcao|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.distribuicao %}
         <h2>Distribuição</h2>
         <p>{{ farmaco.distribuicao|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.metabolismo %}
         <h2>Metabolismo</h2>
         <p>{{ farmaco.metabolismo|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.eliminacao %}
         <h2>Eliminação</h2>
         <p>{{ farmaco.eliminacao|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.indicacoes %}
         <h2>Indicações</h2>
         <p>{{ farmaco.indicacoes|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.posologia %}
         <h2>Posologia</h2>
         <p>{{ farmaco.posologia|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.pediatria %}
         <h2>Pediatria</h2>
         <p>{{ farmaco.pediatria|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.administracao %}
         <h2>Administração</h2>
         <p>{{ farmaco.administracao|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.rmuitocomum %}
         <h2>Reações adversas muito comuns</h2>
         <p>{{ farmaco.rmuitocomum|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.rcomum %}
         <h2>Reações adversas comuns</h2>
         <p>{{ farmaco.rcomum|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.rincomum %}
         <h2>Reações adversas incomuns</h2>
         <p>{{ farmaco.rincomum|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.rrara %}
         <h2>Reações adversas raras</h2>
         <p>{{ farmaco.rrara|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.rmuitorara %}
         <h2>Reações adversas muito raras</h2>
         <p>{{ farmaco.rmuitorara|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if farmaco.rnaodefinida %}
         <h2>Reações adversas com frequência não definida</h2>
         <p>{{ farmaco.rnaodefinida|linebreaksbr }}</p>
+        {% endif %}
     </div>
 {% endblock %}
