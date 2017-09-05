@@ -4,11 +4,13 @@
 
 <h1>Pneumologia</h1>
 
+<div class="artigo">
+  <ul>
   {% for artigo in artigos %}
     {% if artigo.categoria == "Pneumologia" %}
-      <div class="artigo">
-        <h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2>
-      </div>
+        <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
     {% endif %}
   {% endfor %}
+  </ul>
+</div>
 {% endblock content %}

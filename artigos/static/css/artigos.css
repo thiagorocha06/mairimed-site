@@ -3,13 +3,48 @@
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 20px 0px 40px;
+    text-align: center;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 40pt;
     text-decoration: none;
+}
+
+.page-header h2, .page-header h2 a, .page-header h2 a:visited, .page-header h2 a:active {
+    color: #ffffff;
+    font-size: 25pt;
+    text-decoration: none;
+    text-align: center;
+}
+
+.menu-superior ul, .menu-superior li {
+  padding: 2px 10px;
+  list-style-type: none;
+  /* visual do link */
+  color: #ffffff;
+  text-decoration: none;
+  text-align: right;
+}
+
+.menu-superior li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.menu ul, .menu li, .menu a {
+    padding: 2px 10px;
+    list-style-type: none;
+    display: inline-block;
+    /* visual do link */
+    color: #333;
+    text-decoration: none;
+}
+
+.active {
+    border-bottom:3px solid #EDEDED;
 }
 
 .content {
@@ -17,7 +52,7 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Tangerine', cursive;
 }
 
 .date {
@@ -44,6 +79,30 @@ h1, h2, h3, h4 {
     margin-bottom: 70px;
 }
 
-.artigo h1 a, .artigo h1 a:visited {
-    color: #000000;
+.topicos h1, h2, h3, h4 {
+    font-family: 'Tangerine', cursive;
+}
+
+.artigo h1, .artigo h1 a, .artigo h1 a:visited {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20pt;
+    color: #FA6746;
+}
+
+.artigo h2, .artigo h2 a, .artigo h2 a:visited {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15pt;
+    color: #FA6746;
+}
+
+.artigo h3, .artigo h3 a, .artigo h3 a:visited {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12pt;
+    color: #FA6746;
+}
+
+.sidebar {
+  float: left;
+  width: 200px;
+  border: 1px solid #000;
 }

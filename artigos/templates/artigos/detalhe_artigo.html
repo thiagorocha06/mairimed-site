@@ -1,16 +1,30 @@
 {% extends 'mairimed/base.html' %}
 
+{% block sidebar %}
+<div class="sidebar">
+  <div>
+    <ul>
+      <li>Introdução</li>
+      <li>Epidemiologia</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
 {% block content %}
     <div class="artigo">
-        {% if artigo.favorito == 1 %}
+        {% if artigo in estudante.artigos_favoritos.all %}
           <div class="date">
               <p>Artigo Favorito</p>
+              <a type="button">Remover dos Favoritos</a>
           </div>
         {%	else	%}
           <div class="date">
               <p>Artigo Não Favorito</p>
+              <a type="button" href="{% url 'favoritos_artigo' pk=artigo.pk %}">Adicionar aos Favoritos</a>
           </div>
         {% endif %}
+
         <h1>{{ artigo.titulo }}</h1>
 
         {% if artigo.introducao %}
@@ -65,5 +79,11 @@
           <h2>COMPLICAÇÕES</h2>
           <p>{{ artigo.complicacoes|linebreaksbr }}</p>
         {% endif %}
+
+        {% if artigo.complicacoes %}
+          <h2>Referencias</h2>
+          <p>{{ artigo.referencias|linebreaksbr }}</p>
+        {% endif %}
+
     </div>
 {% endblock %}

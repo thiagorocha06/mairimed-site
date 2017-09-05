@@ -18,6 +18,7 @@ class Artigo(models.Model):
     tratamento_e_manejo = models.TextField(blank=True)
     prognostico = models.TextField(blank=True)
     complicacoes = models.TextField(blank=True)
+    referencias = models.TextField(blank=True)
 
     def publicar(self):
         self.data_de_publicacao = timezone.now()

@@ -1,13 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Artigo, Termo, Farmaco
-from django.shortcuts import render, get_object_or_404
+from contas.models import Estudante
 from .forms import ArtigoForm
-from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
 def inicio(request):
-    return render(request, 'mairimed/inicio.html')
+    estudante = Estudante.objects
+    lista_artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('titulo')
+    return render(request, 'mairimed/inicio.html', {'estudante': estudante, 'lista_artigos': lista_artigos})
+
+### FARMACOS ###
 
 def lista_farmacos(request):
     farmacos = Farmaco.objects.filter(nome__isnull=False).order_by('nome')
@@ -17,6 +20,8 @@ def detalhe_farmacos(request, pk):
     farmaco = get_object_or_404(Farmaco, pk=pk)
     return render(request, 'farmacos/detalhe_farmacos.html', {'farmaco': farmaco})
 
+### TERMOS ###
+
 def lista_termos(request):
     termos = Termo.objects.filter(definicao__isnull=False).order_by('nome')
     return render(request, 'termos/lista_termos.html', {'termos' : termos})
@@ -24,6 +29,8 @@ def lista_termos(request):
 def detalhe_termos(request, pk):
     termo = get_object_or_404(Termo, pk=pk)
     return render(request, 'termos/detalhe_termos.html', {'termo': termo})
+
+### ARTIGOS ###
 
 def categorias_artigos(request):
     return render(request, 'artigos/categorias_artigos.html')
@@ -54,7 +61,15 @@ def pneumologia_artigos(request):
 
 def detalhe_artigo(request, pk):
     artigo = get_object_or_404(Artigo, pk=pk)
-    return render(request, 'artigos/detalhe_artigo.html', {'artigo': artigo})
+    estudante = Estudante.objects
+    return render(request, 'artigos/detalhe_artigo.html', {'estudante': estudante, 'artigo': artigo})
+
+def favoritos_artigo(request, pk):
+    artigo = get_object_or_404(Artigo, pk=pk)
+    artigos_favoritos = Estudante.artigos_favoritos
+    estudante = Estudante.objects
+    estudante.artigos_favoritos.add(artigo)
+    return redirect('detalhe_artigo', pk=pk)
 
 @login_required
 def novo_artigo(request):
@@ -89,7 +104,7 @@ def lista_rascunhos(request):
 	return render(request, 'artigos/lista_rascunhos.html', {'artigos': artigos})
 
 @login_required
-def publicar_artigo(request,	pk):
+def publicar_artigo(request, pk):
 	artigo = get_object_or_404(Artigo, pk=pk)
 	artigo.publicar()
 	return redirect('detalhe_artigo', pk=pk)

@@ -19,6 +19,8 @@ urlpatterns = [
     url(r'^artigo/(?P<pk>\d+)/publicar/$',	views.publicar_artigo,	name='publicar_artigo'),
     url(r'^artigo/(?P<pk>\d+)/remover/$', views.remover_artigo, name='remover_artigo'),
 
+    url(r'^artigo/(?P<pk>\d+)/favoritos/$', views.favoritos_artigo, name='favoritos_artigo'),
+
     url(r'^termos/lista$', views.lista_termos, name='lista_termos'),
     url(r'^termos/(?P<pk>\d+)/$', views.detalhe_termos, name='detalhe_termos'),
 

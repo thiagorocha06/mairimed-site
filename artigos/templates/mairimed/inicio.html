@@ -1,8 +1,23 @@
 {% extends "mairimed/base.html" %}
 
 {% block content %}
-	
+
 	<h1>Início</h1>
-	<h1>Favoritos</h1>
+
+	{% if user.is_authenticated %}
+		<h1>Favoritos</h1>
+		{% with estudante.artigos_favoritos.all as artigo_favoritado %}
+		  {% for artigo in lista_artigos %}
+		    {% if artigo in artigo_favoritado %}
+
+				<h1><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h1>
+
+				{% else %}
+				<p>Não ha favoritos</p>
+				{% endif %}
+		  {% endfor %}
+		{% endwith %}
+
+	{% endif %}
 
 {% endblock %}

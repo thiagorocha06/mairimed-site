@@ -3,7 +3,8 @@
 <html>
     <head>
       <title>Mairimed</title>
-      <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
       <link rel="stylesheet" href="{% static 'css/artigos.css' %}">
@@ -11,39 +12,47 @@
     <body>
 
       <div class="page-header">
+
+        <!-- MENU SUPERIOR -->
+        <nav id="menu-superior" class="menu-superior">
+          <ul>
+              {% if user.is_authenticated %}
+                <li>Olá {{ user.username }}
+                  <small>(<a href="{% url 'logout'%}">Sair,</a>
+                  <a href="/perfil">Perfil</a>)</small>
+                </li>
+              {%	else	%}
+                <li><a href="/cadastro">Cadastrar-se</a></li>
+                <li><a href="{%	url	'login'	%}">Entrar</a></li>
+              {% endif %}
+          </ul>
+        </nav>
+
         <h1><a href="/">Mairimed</a></h1>
+
+        <!-- BARRA DE NAVEGACAO -->
+        <nav id="menu" class="menu">
+          <ul>
+            {% url 'inicio' as inicio %}
+            {% url 'categorias_artigos' as categorias_artigos %}
+            {% url 'lista_farmacos' as lista_farmacos %}
+            {% url 'lista_termos' as lista_termos %}
+            <li {% if request.path == inicio %} class="active" {% endif %}><h2><a href="{% url 'inicio' %}">Início</a></h2></li>
+            <li {% if request.path == categorias_artigos %} class="active" {% endif %}><h2><a href="{% url 'categorias_artigos' %}">Resumos de Medicina</a></h2></li>
+            <li {% if request.path == lista_farmacos %} class="active" {% endif %}><h2><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></h2></li>
+            <li {% if request.path == lista_termos %} class="active" {% endif %}><h2><a href="{% url 'lista_termos' %}">Termos Médicos</a></h2></li>
+          </ul>
+        </nav>
+
       </div>
 
-      <!-- Static navbar -->
-          <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-              <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                  {% url 'inicio' as inicio %}
-                  {% url 'categorias_artigos' as categorias_artigos %}
-                  {% url 'lista_farmacos' as lista_farmacos %}
-                  {% url 'lista_termos' as lista_termos %}
-                  <li {% if request.path == inicio %} class="active" {% endif %}><a href="{% url 'inicio' %}">Início</a></li>
-                  <li {% if request.path == categorias_artigos %} class="active" {% endif %}><a href="{% url 'categorias_artigos' %}">Resumos de Medicina</a></li>
-                  <li {% if request.path == lista_farmacos %} class="active" {% endif %}><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></li>
-                  <li {% if request.path == lista_termos %} class="active" {% endif %}><a href="{% url 'lista_termos' %}">Termos Médicos</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="active">
-                    {% if user.is_authenticated %}
-                      <li>Olá {{ user.username }}
-                        <small>(<a href="{% url 'logout'%}">Sair,</a>
-                        <a href="/perfil">Perfil</a>)</small>
-                      </li>
-                    {%	else	%}
-                      <li><a href="/cadastro">Cadastrar-se</a></li>
-                      <li><a href="{%	url	'login'	%}">Entrar</a></li>
-                    {% endif %}
-                </ul>
-              </div><!--/.nav-collapse -->
-            </div>
-          </nav>
+      <!-- BARRA LATERAL -->
+      <div id="sidebar" class="content container">
+            {% block sidebar %}
+            {% endblock %}
+      </div>
 
+      <!-- CONTEUDO -->
       <div class="content container">
         <div class="row">
             <div class="col-md-8">
