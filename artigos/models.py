@@ -29,6 +29,7 @@ class Artigo(models.Model):
 
     diagnostico = models.TextField(blank=True)
     historia_clinica = models.TextField(blank=True)
+    hitoria_figura = models.ImageField(upload_to='img', blank=True)
     exame_fisico = models.TextField(blank=True)
     exames_complementares = models.TextField(blank=True)
     exames_top1 = models.TextField(blank=True)
