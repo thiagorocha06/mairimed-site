@@ -38,11 +38,18 @@
         {% endif %}
 
         <h2>DIAGNÓSTICO</h2>
+        {% if artigo.diagnostico %}
         <p>{{ artigo.diagnostico|linebreaksbr }}</p>
+        {% endif %}
 
         {% if artigo.historia_clinica %}
           <h3>HISTÓRIA CLÍNICA</h3>
           <p>{{ artigo.historia_clinica|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.exame_fisico %}
+          <h3>EXAME FÍSICO</h3>
+          <p>{{ artigo.exame_fisico|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.exames_complementares %}
@@ -60,9 +67,29 @@
           <p>{{ artigo.diagnostico_diferencial|linebreaksbr }}</p>
         {% endif %}
 
+        <h2>TRATAMENTO E MANEJO</h2>
         {% if artigo.tratamento_e_manejo %}
-          <h2>TRATAMENTO E MANEJO</h2>
           <p>{{ artigo.tratamento_e_manejo|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.tratamento_nao_medicamentoso %}
+          <h3>NÃO MEDICAMENTOSO</h3>
+          <p>{{ artigo.tratamento_nao_medicamentoso|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.tratamento_medicamentoso %}
+          <h3>MEDICAMENTOSO</h3>
+          <p>{{ artigo.tratamento_medicamentoso|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.tratamento_intervencionista %}
+          <h3>INTERVENCIONISTA</h3>
+          <p>{{ artigo.tratamento_intervencionista|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.profilaxia %}
+          <h2>PROFILAXIA</h2>
+          <p>{{ artigo.profilaxia|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.prognostico %}
@@ -75,8 +102,13 @@
           <p>{{ artigo.complicacoes|linebreaksbr }}</p>
         {% endif %}
 
+        {% if artigo.algoritmo %}
+          <h2>ALGORITMO</h2>
+          <img src="{{ artigo.algoritmo.url }}" width="900" />
+        {% endif %}
+
         {% if artigo.complicacoes %}
-          <h2>Referencias</h2>
+          <h2>REFERENCIAS</h2>
           <p>{{ artigo.referencias|linebreaksbr }}</p>
         {% endif %}
 

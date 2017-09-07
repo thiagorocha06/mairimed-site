@@ -2,12 +2,11 @@
 
 {% block content %}
 
-<h1>Cardiologia</h1>
-
 <div class="artigo">
+  <h1>M402 - DISTÚRBIOS SENSORIAIS, MOTORES E DA CONSCIÊNCIA</h1>
   <ul>
   {% for artigo in artigos %}
-    {% if artigo.categoria == "Cardiologia" %}
+    {% if artigo.modulo == "M402" %}
         <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
     {% endif %}
   {% endfor %}

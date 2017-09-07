@@ -2,12 +2,11 @@
 
 {% block content %}
 
-<h1>Pediatria</h1>
-
 <div class="artigo">
+  <h1>Endocrinologia</h1>
   <ul>
   {% for artigo in artigos %}
-    {% if artigo.categoria == "Pediatria" %}
+    {% if artigo.categoria == "Endocrinologia" %}
         <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
     {% endif %}
   {% endfor %}

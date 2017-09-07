@@ -2,13 +2,15 @@
 
 {% block content %}
 
-<h1>Termos Médicos</h1>
+<!--
 <form>
   <input type="text" class="form-control" placeholder="Pesquisar...">
 </form>
-  {% for termo in termos %}
-    <div class="artigo">
+-->
+<div class="artigo">
+  <h1>Termos Médicos</h1>
+    {% for termo in termos %}
       <h2><a href="{% url 'detalhe_termos' pk=termo.pk %}">{{ termo.nome }}</a></h2>
-    </div>
   {% endfor %}
+</div>
 {% endblock content %}

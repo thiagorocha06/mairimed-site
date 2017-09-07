@@ -2,12 +2,11 @@
 
 {% block content %}
 
-<h1>Pneumologia</h1>
-
 <div class="artigo">
+  <h1>M403 - DISPNÉIA, DOR TORÁCICA E EDEMAS</h1>
   <ul>
   {% for artigo in artigos %}
-    {% if artigo.categoria == "Pneumologia" %}
+    {% if artigo.modulo == "M403" %}
         <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
     {% endif %}
   {% endfor %}

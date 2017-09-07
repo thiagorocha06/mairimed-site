@@ -10,16 +10,6 @@ def inicio(request):
     lista_artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('titulo')
     return render(request, 'mairimed/inicio.html', {'estudante': estudante, 'lista_artigos': lista_artigos})
 
-### FARMACOS ###
-
-def lista_farmacos(request):
-    farmacos = Farmaco.objects.filter(nome__isnull=False).order_by('nome')
-    return render(request, 'farmacos/lista_farmacos.html', {'farmacos' : farmacos})
-
-def detalhe_farmacos(request, pk):
-    farmaco = get_object_or_404(Farmaco, pk=pk)
-    return render(request, 'farmacos/detalhe_farmacos.html', {'farmaco': farmaco})
-
 ### TERMOS ###
 
 def lista_termos(request):
@@ -30,6 +20,16 @@ def detalhe_termos(request, pk):
     termo = get_object_or_404(Termo, pk=pk)
     return render(request, 'termos/detalhe_termos.html', {'termo': termo})
 
+### FARMACOS ###
+
+def lista_farmacos(request):
+    farmacos = Farmaco.objects.filter(nome__isnull=False).order_by('nome')
+    return render(request, 'farmacos/lista_farmacos.html', {'farmacos' : farmacos})
+
+def detalhe_farmacos(request, pk):
+    farmaco = get_object_or_404(Farmaco, pk=pk)
+    return render(request, 'farmacos/detalhe_farmacos.html', {'farmaco': farmaco})
+
 ### ARTIGOS ###
 
 def categorias_artigos(request):
@@ -37,27 +37,27 @@ def categorias_artigos(request):
 
 def abdome_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
-    return render(request, 'artigos/abdome_artigos.html', {'artigos' : artigos})
+    return render(request, 'artigos/categorias/abdome_artigos.html', {'artigos' : artigos})
 
 def cardiologia_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
-    return render(request, 'artigos/cardiologia_artigos.html', {'artigos' : artigos})
+    return render(request, 'artigos/categorias/cardiologia_artigos.html', {'artigos' : artigos})
 
 def endocrinologia_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
-    return render(request, 'artigos/endocrinologia_artigos.html', {'artigos' : artigos})
+    return render(request, 'artigos/categorias/endocrinologia_artigos.html', {'artigos' : artigos})
 
 def nefrologia_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
-    return render(request, 'artigos/nefrologia_artigos.html', {'artigos' : artigos})
+    return render(request, 'artigos/categorias/nefrologia_artigos.html', {'artigos' : artigos})
 
 def pediatria_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
-    return render(request, 'artigos/pediatria_artigos.html', {'artigos' : artigos})
+    return render(request, 'artigos/categorias/pediatria_artigos.html', {'artigos' : artigos})
 
 def pneumologia_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
-    return render(request, 'artigos/pneumologia_artigos.html', {'artigos' : artigos})
+    return render(request, 'artigos/categorias/pneumologia_artigos.html', {'artigos' : artigos})
 
 def detalhe_artigo(request, pk):
     artigo = get_object_or_404(Artigo, pk=pk)
@@ -70,6 +70,47 @@ def favoritos_artigo(request, pk):
     estudante = Estudante.objects
     estudante.artigos_favoritos.add(artigo)
     return redirect('detalhe_artigo', pk=pk)
+
+### ESCS ###
+
+def p_serie(request):
+    return render(request, 'artigos/ESCS/1_serie.html')
+
+def s_serie(request):
+    return render(request, 'artigos/ESCS/2_serie.html')
+
+def t_serie(request):
+    return render(request, 'artigos/ESCS/3_serie.html')
+
+def q_serie(request):
+    return render(request, 'artigos/ESCS/4_serie.html')
+
+def M401(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/ESCS/M401.html', {'artigos' : artigos})
+
+def M402(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/ESCS/M402.html', {'artigos' : artigos})
+
+def M403(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/ESCS/M403.html', {'artigos' : artigos})
+
+def M404(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/ESCS/M404.html', {'artigos' : artigos})
+
+def M406(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/ESCS/M406.html', {'artigos' : artigos})
+
+def M407(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/ESCS/M407.html', {'artigos' : artigos})
+
+### Deletar daqui para baixo ###
+
 
 @login_required
 def novo_artigo(request):

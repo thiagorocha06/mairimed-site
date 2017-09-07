@@ -1,23 +1,32 @@
 from django.db import models
 from django.utils import timezone
+from django.conf import settings
 
 class Artigo(models.Model):
     author = models.ForeignKey('auth.User')
     data_de_criacao = models.DateTimeField(default=timezone.now)
     data_de_publicacao = models.DateTimeField(blank=True, null=True)
+    modulo = models.CharField(max_length=200, blank=True, null=True)
     categoria = models.CharField(max_length=200, blank=True, null=True)
     titulo = models.CharField(max_length=200)
     introducao = models.TextField(blank=True)
+    intro_figura = models.TextField(blank=True)
     epidemiologia = models.TextField(blank=True)
     etiologia_fisiopatologia = models.TextField(blank=True)
     diagnostico = models.TextField(blank=True)
     historia_clinica = models.TextField(blank=True)
+    exame_fisico = models.TextField(blank=True)
     exames_complementares = models.TextField(blank=True)
     criterios_diagnosticos = models.TextField(blank=True)
     diagnostico_diferencial = models.TextField(blank=True)
     tratamento_e_manejo = models.TextField(blank=True)
+    tratamento_nao_medicamentoso = models.TextField(blank=True)
+    tratamento_medicamentoso = models.TextField(blank=True)
+    tratamento_intervencionista = models.TextField(blank=True)
+    profilaxia = models.TextField(blank=True)
     prognostico = models.TextField(blank=True)
     complicacoes = models.TextField(blank=True)
+    algoritmo = models.ImageField(upload_to='img' , blank=True)
     referencias = models.TextField(blank=True)
 
     def publicar(self):

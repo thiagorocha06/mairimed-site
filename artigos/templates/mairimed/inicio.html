@@ -2,8 +2,15 @@
 
 {% block content %}
 
-	<h1>Início</h1>
-
+	<div class="artigo">
+		<h1>ESCS</h1>
+		<ul>
+			<li><h2><a href="{% url '1_serie' %}">1ª Série</a></h2></li>
+			<li><h2><a href="{% url '2_serie' %}">2ª Série</a></h2></li>
+			<li><h2><a href="{% url '3_serie' %}">3ª Série</a></h2></li>
+			<li><h2><a href="{% url '4_serie' %}">4ª Série</a></h2></li>
+		</ul>
+	</div>
 <!-- Favoritos
 	{% if user.is_authenticated %}
 		<h1>Favoritos</h1>

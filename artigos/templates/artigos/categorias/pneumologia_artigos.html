@@ -1,0 +1,15 @@
+{% extends 'mairimed/base.html' %}
+
+{% block content %}
+
+<div class="artigo">
+  <h1>Pneumologia</h1>
+  <ul>
+  {% for artigo in artigos %}
+    {% if artigo.categoria == "Pneumologia" %}
+        <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+{% endblock content %}
