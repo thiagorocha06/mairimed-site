@@ -27,15 +27,60 @@
           <p>{{ artigo.introducao|linebreaksbr }}</p>
         {% endif %}
 
+        {% if artigo.intro_figura %}
+          <img src="{{ artigo.intro_figura.url }}" width="900" />
+        {% endif %}
+
         {% if artigo.epidemiologia %}
           <h2>EPIDEMIOLOGIA</h2>
           <p>{{ artigo.epidemiologia|linebreaksbr }}</p>
         {% endif %}
 
+        {% if artigo.epidemio_figura %}
+          <img src="{{ artigo.epidemio_figura.url }}" width="900" />
+        {% endif %}
+
+        {% if artigo.classificacao %}
+          <h2>CLASSIFICAÇÃO</h2>
+          <p>{{ artigo.classificacao|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.clas_figura %}
+          <img src="{{ artigo.clas_figura.url }}" width="900" />
+        {% endif %}
+
+        <!-- ETIOLOGIA E FISIOPATOLOGIA -->
+
+        <h2>ETIOLOGIA E FISIOPATOLOGIA</h2>
         {% if artigo.etiologia_fisiopatologia %}
-          <h2>ETIOLOGIA E FISIOPATOLOGIA</h2>
           <p>{{ artigo.etiologia_fisiopatologia|linebreaksbr }}</p>
         {% endif %}
+
+        {% if artigo.etio_top1 %}
+          <h3>{{ artigo.etio_top1|linebreaksbr }}</h3>
+          <p>{{ artigo.etio_texto1|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.etio_top2 %}
+          <h3>{{ artigo.etio_top2|linebreaksbr }}</h3>
+          <p>{{ artigo.etio_texto2|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.etio_top3 %}
+          <h3>{{ artigo.etio_top3|linebreaksbr }}</h3>
+          <p>{{ artigo.etio_texto3|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.etio_top4 %}
+          <h3>{{ artigo.etio_top4|linebreaksbr }}</h3>
+          <p>{{ artigo.etio_texto4|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.etio_figura %}
+          <img src="{{ artigo.etio_figura.url }}" width="900" />
+        {% endif %}
+
+        <!-- DIAGNOSTICO -->
 
         <h2>DIAGNÓSTICO</h2>
         {% if artigo.diagnostico %}
@@ -52,9 +97,29 @@
           <p>{{ artigo.exame_fisico|linebreaksbr }}</p>
         {% endif %}
 
+        <h3>EXAMES COMPLEMENTARES</h3>
         {% if artigo.exames_complementares %}
-          <h3>EXAMES COMPLEMENTARES</h3>
           <p>{{ artigo.exames_complementares|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.exames_top1 %}
+          <h4>{{ artigo.exames_top1|linebreaksbr }}</h4>
+          <p>{{ artigo.exames_texto1|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.exames_top2 %}
+          <h4>{{ artigo.exames_top2|linebreaksbr }}</h4>
+          <p>{{ artigo.exames_texto2|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.exames_top3 %}
+          <h4>{{ artigo.exames_top3|linebreaksbr }}</h4>
+          <p>{{ artigo.exames_texto3|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.exames_top4 %}
+          <h4>{{ artigo.exames_top4|linebreaksbr }}</h4>
+          <p>{{ artigo.exames_texto4|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.criterios_diagnosticos %}
@@ -67,6 +132,12 @@
           <p>{{ artigo.diagnostico_diferencial|linebreaksbr }}</p>
         {% endif %}
 
+        {% if artigo.diag_figura %}
+          <img src="{{ artigo.diag_figura.url }}" width="900" />
+        {% endif %}
+
+        <!-- TRATAMENTO -->
+
         <h2>TRATAMENTO E MANEJO</h2>
         {% if artigo.tratamento_e_manejo %}
           <p>{{ artigo.tratamento_e_manejo|linebreaksbr }}</p>
@@ -77,9 +148,29 @@
           <p>{{ artigo.tratamento_nao_medicamentoso|linebreaksbr }}</p>
         {% endif %}
 
+        <h3>MEDICAMENTOSO</h3>
         {% if artigo.tratamento_medicamentoso %}
-          <h3>MEDICAMENTOSO</h3>
           <p>{{ artigo.tratamento_medicamentoso|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.med_top1 %}
+          <h4>{{ artigo.med_top1|linebreaksbr }}</h4>
+          <p>{{ artigo.med_texto1|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.med_top2 %}
+          <h4>{{ artigo.med_top2|linebreaksbr }}</h4>
+          <p>{{ artigo.med_texto2|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.med_top3 %}
+          <h4>{{ artigo.med_top3|linebreaksbr }}</h4>
+          <p>{{ artigo.med_texto3|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.med_top4 %}
+          <h4>{{ artigo.artigo.med_top4|linebreaksbr }}</h4>
+          <p>{{ artigo.artigo.med_texto4|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.tratamento_intervencionista %}
@@ -90,6 +181,11 @@
         {% if artigo.profilaxia %}
           <h2>PROFILAXIA</h2>
           <p>{{ artigo.profilaxia|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.prof_figura %}
+          <h2>ALGORITMO</h2>
+          <img src="{{ artigo.prof_figura.url }}" width="900" />
         {% endif %}
 
         {% if artigo.prognostico %}

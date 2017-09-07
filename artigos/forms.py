@@ -7,11 +7,9 @@ class ArtigoForm(forms.ModelForm):
         model = Artigo
         fields = (
         'modulo', 'categoria',
-        'titulo', 'introducao', 'intro_figura', 'epidemiologia',
-        'etiologia_fisiopatologia', 'diagnostico',
-        'historia_clinica', 'exame_fisico', 'exames_complementares',
-        'criterios_diagnosticos', 'diagnostico_diferencial',
-        'tratamento_e_manejo', 'tratamento_nao_medicamentoso',
-        'tratamento_medicamentoso', 'tratamento_intervencionista',
-        'profilaxia', 'prognostico', 'complicacoes', 'algoritmo', 'referencias'
+        'titulo', 'introducao', 'classificacao', 'epidemiologia',
+        'etiologia_fisiopatologia', 'etio_top1', 'etio_texto1', 'etio_top2', 'etio_texto2', 'etio_top3', 'etio_texto3', 'etio_top4', 'etio_texto4',
+        'diagnostico', 'historia_clinica', 'exame_fisico', 'exames_complementares', 'criterios_diagnosticos', 'diagnostico_diferencial',
+        'tratamento_e_manejo', 'tratamento_nao_medicamentoso', 'tratamento_medicamentoso', 'tratamento_intervencionista',
+        'profilaxia', 'prognostico', 'complicacoes', 'referencias'
         )

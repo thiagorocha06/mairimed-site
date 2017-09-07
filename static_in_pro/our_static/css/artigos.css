@@ -86,19 +86,35 @@ h1, h2, h3, h4 {
 .artigo h1, .artigo h1 a, .artigo h1 a:visited {
     font-family: 'Ubuntu', sans-serif;
     font-size: 20pt;
+    font-weight: bold;
     color: #d45500;
 }
 
 .artigo h2, .artigo h2 a, .artigo h2 a:visited {
     font-family: 'Ubuntu', sans-serif;
     font-size: 15pt;
+    font-weight: bold;
     color: #ff6600;
 }
 
 .artigo h3, .artigo h3 a, .artigo h3 a:visited {
     font-family: 'Ubuntu', sans-serif;
     font-size: 12pt;
+    font-weight: bold;
     color: #ff7f2a;
+}
+
+.artigo h4, .artigo h4 a, .artigo h4 a:visited {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 11pt;
+    font-weight: bold;
+    color: #000;
+}
+
+.artigo p, .artigo p a, .artigo p a:visited {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 10pt;
+    color: #000;
 }
 
 .sidebar {
