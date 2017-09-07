@@ -86,19 +86,19 @@ h1, h2, h3, h4 {
 .artigo h1, .artigo h1 a, .artigo h1 a:visited {
     font-family: 'Ubuntu', sans-serif;
     font-size: 20pt;
-    color: #FA6746;
+    color: #d45500;
 }
 
 .artigo h2, .artigo h2 a, .artigo h2 a:visited {
     font-family: 'Ubuntu', sans-serif;
     font-size: 15pt;
-    color: #FA6746;
+    color: #ff6600;
 }
 
 .artigo h3, .artigo h3 a, .artigo h3 a:visited {
     font-family: 'Ubuntu', sans-serif;
     font-size: 12pt;
-    color: #FA6746;
+    color: #ff7f2a;
 }
 
 .sidebar {
