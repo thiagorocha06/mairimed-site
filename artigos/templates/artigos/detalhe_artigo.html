@@ -1,18 +1,12 @@
 {% extends 'mairimed/base.html' %}
 
 {% block sidebar %}
-<div class="sidebar">
-  <div>
-    <ul>
-      <li>Introdução</li>
-      <li>Epidemiologia</li>
-    </ul>
-  </div>
-</div>
 {% endblock %}
 
 {% block content %}
     <div class="artigo">
+
+      <!-- Favoritos
         {% if artigo in estudante.artigos_favoritos.all %}
           <div class="date">
               <p>Artigo Favorito</p>
@@ -24,6 +18,7 @@
               <a type="button" href="{% url 'favoritos_artigo' pk=artigo.pk %}">Adicionar aos Favoritos</a>
           </div>
         {% endif %}
+      -->
 
         <h1>{{ artigo.titulo }}</h1>
 
