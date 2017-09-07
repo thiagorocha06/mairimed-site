@@ -28,7 +28,7 @@
         {% endif %}
 
         {% if artigo.intro_figura %}
-          <img src="{{ artigo.intro_figura.url }}" width="700" />
+          <img src="{{ artigo.intro_figura.url }}" width="800" />
         {% endif %}
 
         {% if artigo.epidemiologia %}
@@ -37,7 +37,7 @@
         {% endif %}
 
         {% if artigo.epidemio_figura %}
-          <img src="{{ artigo.epidemio_figura.url }}" width="700" />
+          <img src="{{ artigo.epidemio_figura.url }}" width="800" />
         {% endif %}
 
         {% if artigo.classificacao %}
@@ -46,7 +46,7 @@
         {% endif %}
 
         {% if artigo.clas_figura %}
-          <img src="{{ artigo.clas_figura.url }}" width="700" />
+          <img src="{{ artigo.clas_figura.url }}" width="800" />
         {% endif %}
 
         <!-- ETIOLOGIA E FISIOPATOLOGIA -->
@@ -77,7 +77,7 @@
         {% endif %}
 
         {% if artigo.etio_figura %}
-          <img src="{{ artigo.etio_figura.url }}" width="700" />
+          <img src="{{ artigo.etio_figura.url }}" width="800" />
         {% endif %}
 
         <!-- DIAGNOSTICO -->
@@ -93,7 +93,7 @@
         {% endif %}
 
         {% if artigo.historia_figura %}
-          <img src="{{ artigo.historia_figura.url }}" width="700" />
+          <img src="{{ artigo.historia_figura.url }}" width="800" />
         {% endif %}
 
         {% if artigo.exame_fisico %}
@@ -137,7 +137,7 @@
         {% endif %}
 
         {% if artigo.diag_figura %}
-          <img src="{{ artigo.diag_figura.url }}" width="700" />
+          <img src="{{ artigo.diag_figura.url }}" width="800" />
         {% endif %}
 
         <!-- TRATAMENTO -->
@@ -182,14 +182,17 @@
           <p>{{ artigo.tratamento_intervencionista|linebreaksbr }}</p>
         {% endif %}
 
+        {% if artigo.trat_figura %}
+          <img src="{{ artigo.trat_figura.url }}" width="800" />
+        {% endif %}
+
         {% if artigo.profilaxia %}
           <h2>PROFILAXIA</h2>
           <p>{{ artigo.profilaxia|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.prof_figura %}
-          <h2>ALGORITMO</h2>
-          <img src="{{ artigo.prof_figura.url }}" width="700" />
+          <img src="{{ artigo.prof_figura.url }}" width="800" />
         {% endif %}
 
         {% if artigo.prognostico %}
@@ -204,7 +207,7 @@
 
         {% if artigo.algoritmo %}
           <h2>ALGORITMO</h2>
-          <img src="{{ artigo.algoritmo.url }}" width="700" />
+          <img src="{{ artigo.algoritmo.url }}" width="800" />
         {% endif %}
 
         {% if artigo.complicacoes %}
