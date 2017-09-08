@@ -140,6 +140,16 @@
           <img src="{{ artigo.diag_figura.url }}" width="800" />
         {% endif %}
 
+        <!-- TOPICO1 -->
+
+        {% if artigo.top1 %}
+          <h1>{{ artigo.top1|linebreaksbr }}</h1>
+          <p>{{ artigo.texto1|linebreaksbr }}</p>
+          {% if artigo.top1_figura %}
+            <img src="{{ artigo.top1_figura.url }}" width="800" />
+          {% endif %}
+        {% endif %}
+
         <!-- TRATAMENTO -->
 
         <h2>TRATAMENTO E MANEJO</h2>
