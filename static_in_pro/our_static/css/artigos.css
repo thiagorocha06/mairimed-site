@@ -127,6 +127,8 @@ h1, h2, h3, h4 {
 .artigo p, .artigo p a, .artigo p a:visited {
     font-family: 'Ubuntu', sans-serif;
     font-size: 10pt;
+    text-align: justify;
+    text-justify: inter-word;
     color: #000;
 }
 
