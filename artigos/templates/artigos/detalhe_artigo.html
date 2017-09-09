@@ -143,7 +143,7 @@
         <!-- TOPICO1 -->
 
         {% if artigo.top1 %}
-          <h1>{{ artigo.top1|linebreaksbr }}</h1>
+          <h2>{{ artigo.top1|linebreaksbr }}</h2>
           <p>{{ artigo.texto1|linebreaksbr }}</p>
           {% if artigo.top1_figura %}
             <img src="{{ artigo.top1_figura.url }}" width="800" />
@@ -220,7 +220,7 @@
           <img src="{{ artigo.algoritmo.url }}" width="800" />
         {% endif %}
 
-        {% if artigo.complicacoes %}
+        {% if artigo.referencias %}
           <h2>REFERENCIAS</h2>
           <p>{{ artigo.referencias|linebreaksbr }}</p>
         {% endif %}

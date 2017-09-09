@@ -27,7 +27,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'mairimed.pythonanywhere.com'
+    'mairimed.pythonanywhere.com',
+    'mairimed.com',
+    'www.mairimed.com',
 ]
 
 

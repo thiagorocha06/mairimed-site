@@ -20,6 +20,13 @@
     text-align: center;
 }
 
+.final-pag {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 0px 0px;
+    text-align: center;
+}
+
 .menu-superior ul, .menu-superior li {
   padding: 2px 10px;
   list-style-type: none;
