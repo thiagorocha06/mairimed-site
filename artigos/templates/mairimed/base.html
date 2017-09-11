@@ -41,12 +41,14 @@
             {% url 'categorias_artigos' as categorias_artigos %}
             {% url 'lista_farmacos' as lista_farmacos %}
             {% url 'lista_termos' as lista_termos %}
+            {% url 'exercicios_categorias' as exercicios_categorias %}
             <li {% if request.path == inicio %} class="active" {% endif %}><h2><a href="{% url 'inicio' %}">ESCS</a></h2></li>
             <li {% if request.path == categorias_artigos %} class="active" {% endif %}><h2><a href="{% url 'categorias_artigos' %}">Resumos de Medicina</a></h2></li>
           <!--
             <li {% if request.path == lista_farmacos %} class="active" {% endif %}><h2><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></h2></li>
             <li {% if request.path == lista_termos %} class="active" {% endif %}><h2><a href="{% url 'lista_termos' %}">Termos Médicos</a></h2></li>
           -->
+            <li {% if request.path == exercicios_categorias %} class="active" {% endif %}><h2><a href="{% url 'exercicios_categorias' %}">Exercícios de Medicina</a></h2></li>
           </ul>
         </nav>
         </div>

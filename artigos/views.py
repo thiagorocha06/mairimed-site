@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Artigo, Termo, Farmaco
+from .models import Artigo, Termo, Farmaco, Exercicio
 from contas.models import Estudante
 from .forms import ArtigoForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 def inicio(request):
     estudante = Estudante.objects
@@ -29,6 +30,27 @@ def lista_farmacos(request):
 def detalhe_farmacos(request, pk):
     farmaco = get_object_or_404(Farmaco, pk=pk)
     return render(request, 'farmacos/detalhe_farmacos.html', {'farmaco': farmaco})
+
+### EXERCICIOS ###
+
+def categorias_exercicios(request):
+    return render(request, 'exercicios/categorias_exercicios.html')
+
+def exercicios_ecg(request):
+    exercicios = Exercicio.objects.filter(nome__isnull=False).order_by('nome')
+    return render(request, 'exercicios/exercicios_ecg.html', {'exercicios' : exercicios})
+
+def exercicios_rx(request):
+    #farmacos = Farmaco.objects.filter(nome__isnull=False).order_by('nome')
+    #return render(request, 'farmacos/lista_farmacos.html', {'farmacos' : farmacos})
+    return render(request, 'exercicios/exercicios_rx.html')
+
+def exercicios_resposta(request):
+    exercicios = Exercicio.objects.filter(nome__isnull=False).order_by('nome')
+    #exercicio_resposta = get_object_or_404(Exercicio, pk=pk)
+    return render(request, 'exercicios/exercicios_resposta.html', {'exercicios' : exercicios})
+    #return redirect(request.META['HTTP_REFERER'])
+    #return redirect(instance.get_absolute_url())
 
 ### ARTIGOS ###
 
