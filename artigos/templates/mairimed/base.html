@@ -11,6 +11,8 @@
     </head>
     <body>
 
+      <!-- HEADER -->
+
       <div class="page-header">
 
         <!-- MENU SUPERIOR
@@ -31,6 +33,7 @@
 
         <h1><a href="/"><img src="{% static 'img/mairimed_logo4.png' %}" /></a></h1>
 
+        <div>
         <!-- BARRA DE NAVEGACAO -->
         <nav id="menu" class="menu">
           <ul>
@@ -46,22 +49,23 @@
           -->
           </ul>
         </nav>
+        </div>
 
-      </div>
-
-      <!-- BARRA LATERAL -->
-      <div id="sidebar" class="content container">
-            {% block sidebar %}
-            {% endblock %}
       </div>
 
       <!-- CONTEUDO -->
       <div class="content container">
         <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
-            </div>
+          <!-- BARRA LATERAL -->
+          <div id="sidebar" class="col-md-3">
+                {% block sidebar %}
+                {% endblock %}
+          </div>
+          <!-- COLUNA PRINCIPAL -->
+          <div class="col-md-8">
+          {% block content %}
+          {% endblock %}
+          </div>
         </div>
       </div>
 

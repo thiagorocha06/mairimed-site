@@ -1,8 +1,10 @@
 {% extends "mairimed/base.html" %}
+{% load staticfiles%}
 
 {% block content %}
 
 	<div class="artigo">
+		<img src="{% static 'img/logoescs.png' %}" width="100"/>
 		<h1>ESCS</h1>
 		<ul>
 			<li><h2><a href="{% url '1_serie' %}">1ª Série</a></h2></li>
@@ -11,6 +13,7 @@
 			<li><h2><a href="{% url '4_serie' %}">4ª Série</a></h2></li>
 		</ul>
 	</div>
+
 <!-- Favoritos
 	{% if user.is_authenticated %}
 		<h1>Favoritos</h1>
