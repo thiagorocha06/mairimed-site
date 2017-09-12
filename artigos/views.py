@@ -38,11 +38,7 @@ def categorias_exercicios(request):
 
 def exercicios_ecg(request):
     exercicios = Exercicio.objects.all()
-    exercicios = exercicios.extra(select={
-              'nome_a': "SUBSTR(nome, 1)",
-              'nome_b': "CAST(substr(nome, 2) AS UNSIGNED)"})
-    exercicios = exercicios.order_by('nome_a', 'nome_b')
-    #exercicios = Exercicio.objects.filter(nome__isnull=False).order_by('nome')
+    exercicios = Exercicio.objects.filter(nome__isnull=False).order_by("pk")
     return render(request, 'exercicios/exercicios_ecg.html', {'exercicios' : exercicios})
 
 def exercicios_rx(request):
