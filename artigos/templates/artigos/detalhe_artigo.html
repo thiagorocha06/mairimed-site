@@ -76,6 +76,16 @@
           <p>{{ artigo.etio_texto4|linebreaksbr }}</p>
         {% endif %}
 
+        {% if artigo.etio_top5 %}
+          <h3>{{ artigo.etio_top5|linebreaksbr }}</h3>
+          <p>{{ artigo.etio_texto5|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.etio_top6 %}
+          <h3>{{ artigo.etio_top6|linebreaksbr }}</h3>
+          <p>{{ artigo.etio_texto6|linebreaksbr }}</p>
+        {% endif %}
+
         {% if artigo.etio_figura %}
           <img src="{{ artigo.etio_figura.url }}" width="800" />
         {% endif %}
@@ -124,6 +134,16 @@
         {% if artigo.exames_top4 %}
           <h4>{{ artigo.exames_top4|linebreaksbr }}</h4>
           <p>{{ artigo.exames_texto4|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.exames_top5 %}
+          <h4>{{ artigo.exames_top5|linebreaksbr }}</h4>
+          <p>{{ artigo.exames_texto5|linebreaksbr }}</p>
+        {% endif %}
+
+        {% if artigo.exames_top6 %}
+          <h4>{{ artigo.exames_top6|linebreaksbr }}</h4>
+          <p>{{ artigo.exames_texto6|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.criterios_diagnosticos %}
