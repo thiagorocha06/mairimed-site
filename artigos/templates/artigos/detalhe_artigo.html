@@ -160,13 +160,16 @@
           <img src="{{ artigo.diag_figura.url }}" width="800" />
         {% endif %}
 
-        <!-- TOPICO1 -->
+        <!-- TOPICO ACESSORIO -->
 
         {% if artigo.top1 %}
           <h2>{{ artigo.top1|linebreaksbr }}</h2>
           <p>{{ artigo.texto1|linebreaksbr }}</p>
-          {% if artigo.top1_figura %}
-            <img src="{{ artigo.top1_figura.url }}" width="800" />
+          {% if artigo.top1_img1 %}
+            <img src="{{ artigo.top1_img1.url }}" width="800" />
+          {% endif %}
+          {% if artigo.top1_img2 %}
+            <img src="{{ artigo.top1_img2.url }}" width="800" />
           {% endif %}
         {% endif %}
 

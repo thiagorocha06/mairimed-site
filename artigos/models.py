@@ -62,7 +62,8 @@ class Artigo(models.Model):
 
     top1 = models.TextField(blank=True, null=True)
     texto1 = models.TextField(blank=True, null=True)
-    top1_figura = models.ImageField(upload_to='img', blank=True, null=True)
+    top1_img1 = models.ImageField(upload_to='img', blank=True, null=True)
+    top1_img2 = models.ImageField(upload_to='img', blank=True, null=True)
 
     tratamento_e_manejo = models.TextField(blank=True, null=True)
     tratamento_nao_medicamentoso = models.TextField(blank=True, null=True)
