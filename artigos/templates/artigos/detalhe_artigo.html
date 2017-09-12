@@ -206,18 +206,18 @@
         {% endif %}
 
         {% if artigo.med_top4 %}
-          <h4>{{ artigo.artigo.med_top4|linebreaksbr }}</h4>
-          <p>{{ artigo.artigo.med_texto4|linebreaksbr }}</p>
+          <h4>{{ artigo.med_top4|linebreaksbr }}</h4>
+          <p>{{ artigo.med_texto4|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.med_top5 %}
-          <h4>{{ artigo.artigo.med_top5|linebreaksbr }}</h4>
-          <p>{{ artigo.artigo.med_texto5|linebreaksbr }}</p>
+          <h4>{{ artigo.med_top5|linebreaksbr }}</h4>
+          <p>{{ artigo.med_texto5|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.med_top6 %}
-          <h4>{{ artigo.artigo.med_top6|linebreaksbr }}</h4>
-          <p>{{ artigo.artigo.med_texto6|linebreaksbr }}</p>
+          <h4>{{ artigo.med_top6|linebreaksbr }}</h4>
+          <p>{{ artigo.med_texto6|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.tratamento_intervencionista %}
@@ -248,7 +248,7 @@
           <p>{{ artigo.complicacoes|linebreaksbr }}</p>
         {% endif %}
 
-        {% if artigo.algoritmo %}
+        {% if artigo.algoritmo_img1 %}
           <h2>ALGORITMO</h2>
           {% if artigo.algoritmo_img1 %}
             <img src="{{ artigo.algoritmo_img1.url }}" width="800" />
