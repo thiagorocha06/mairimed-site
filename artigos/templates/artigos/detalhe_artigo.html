@@ -250,7 +250,13 @@
 
         {% if artigo.algoritmo %}
           <h2>ALGORITMO</h2>
-          <img src="{{ artigo.algoritmo.url }}" width="800" />
+          {% if artigo.algoritmo_img1 %}
+            <img src="{{ artigo.algoritmo_img1.url }}" width="800" />
+          {% endif %}
+
+          {% if artigo.algoritmo_img2 %}
+            <img src="{{ artigo.algoritmo_img2.url }}" width="800" />
+          {% endif %}
         {% endif %}
 
         {% if artigo.referencias %}

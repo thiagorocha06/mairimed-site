@@ -86,7 +86,8 @@ class Artigo(models.Model):
     prof_figura = models.ImageField(upload_to='img', blank=True, null=True)
     prognostico = models.TextField(blank=True, null=True)
     complicacoes = models.TextField(blank=True, null=True)
-    algoritmo = models.ImageField(upload_to='img', blank=True, null=True)
+    algoritmo_img1 = models.ImageField(upload_to='img', blank=True, null=True)
+    algoritmo_img2 = models.ImageField(upload_to='img', blank=True, null=True)
     referencias = models.TextField(blank=True, null=True)
 
     def publicar(self):
