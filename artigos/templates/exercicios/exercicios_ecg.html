@@ -18,6 +18,18 @@
         <h4>História</h4>
         <p>{{ exercicio.exercicio_historia }}</p>
       {% endif %}
+      <a class="btn btn-warning" type="submit" value="mostrar_resposta" name="mostrar_resposta">Resposta do Exercicio</a>
+
+      {% if exercicio.exercicio_resposta %}
+        {% if mostrar_r == False %}
+          <div style="display: none;">
+        {% else %}
+          <div style="display: block;">
+          <h4>Resposta</h4>
+          <p>{{ exercicio.exercicio_resposta }}</p>
+          </div>
+        {% endif %}
+      {% endif %}
 
     {% endif %}
   {% endfor %}
