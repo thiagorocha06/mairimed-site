@@ -44,7 +44,7 @@ def exercicios_rx(request):
     return render(request, 'exercicios/exercicios_rx.html')
 
 def exercicios_resposta(request):
-    exercicios = Exercicio.objects.filter(nome__isnull=False).order_by('nome')
+    exercicios = Exercicio.objects.filter(nome__isnull=False).order_by('pk')
     #exercicio_resposta = get_object_or_404(Exercicio, pk=pk)
     return render(request, 'exercicios/exercicios_resposta.html', {'exercicios' : exercicios})
     #return redirect(request.META['HTTP_REFERER'])
