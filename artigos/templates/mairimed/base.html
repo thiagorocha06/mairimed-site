@@ -12,7 +12,6 @@
     <body>
 
       <!-- HEADER -->
-
       <div class="page-header">
 
         <!-- MENU SUPERIOR
@@ -60,8 +59,8 @@
         <div class="row">
           <!-- BARRA LATERAL -->
           <div id="sidebar" class="col-md-3">
-                {% block sidebar %}
-                {% endblock %}
+          {% block sidebar %}
+          {% endblock %}
           </div>
           <!-- COLUNA PRINCIPAL -->
           <div class="col-md-8">
@@ -71,17 +70,19 @@
         </div>
       </div>
 
-
-      <!-- BARRA INFERIOR -->
-      <div class="final-pag">
-      {% block barrainferior %}
-      {% endblock %}
-      </div>
       <!-- BARRA INFERIOR
       <div class="final-pag">
         <p>Aviso: Este site tem um fim meramente informativo e não substitui de forma alguma a consulta a um profissional de saúde, nem quaisquer tratamentos e/ou diagnósticos. Procure sempre o aconselhamento do seu médico ou farmacêutico antes de iniciar ou alterar um tratamento, exercício ou plano alimentar. Alguma informação poderá estar desatualizada. Nenhuma informação do mairimed.com é regulada ou avaliada pelo Infarmed ou pelo Ministério da Saúde, e como tal, não deverá ser utilizada para diagnosticar, curar, tratar ou prevenir qualquer doença sem a supervisão de um profissional de saúde.</p>
       </div>
       -->
+
+      <!-- BARRA INFERIOR -->
+      <footer>
+        <div class="final-pag">
+        {% block barrainferior %}
+        {% endblock %}
+        </div>
+      </footer>
 
     </body>
 </html>
