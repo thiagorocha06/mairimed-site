@@ -64,9 +64,9 @@ def exercicios_resposta(request):
 def categorias_artigos(request):
     return render(request, 'artigos/categorias_artigos.html')
 
-def abdome_artigos(request):
+def infectologia_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
-    return render(request, 'artigos/categorias/abdome_artigos.html', {'artigos' : artigos})
+    return render(request, 'artigos/categorias/infectologia_artigos.html', {'artigos' : artigos})
 
 def cardiologia_artigos(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
