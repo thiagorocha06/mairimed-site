@@ -86,8 +86,12 @@
           <p>{{ artigo.etio_texto6|linebreaksbr }}</p>
         {% endif %}
 
-        {% if artigo.etio_figura %}
-          <img src="{{ artigo.etio_figura.url }}" width="800" />
+        {% if artigo.etio_img1 %}
+          <img src="{{ artigo.etio_img1.url }}" width="800" />
+        {% endif %}
+
+        {% if artigo.etio_img2 %}
+          <img src="{{ artigo.etio_img2.url }}" width="800" />
         {% endif %}
 
         <!-- DIAGNOSTICO -->

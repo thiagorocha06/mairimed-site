@@ -29,7 +29,8 @@ class Artigo(models.Model):
     etio_texto5 = models.TextField(blank=True, null=True)
     etio_top6 = models.TextField(blank=True, null=True)
     etio_texto6 = models.TextField(blank=True, null=True)
-    etio_figura = models.ImageField(upload_to='img', blank=True, null=True)
+    etio_img1 = models.ImageField(upload_to='img', blank=True, null=True)
+    etio_img2 = models.ImageField(upload_to='img', blank=True, null=True)
 
     diagnostico = models.TextField(blank=True, null=True)
     historia_clinica = models.TextField(blank=True, null=True)
