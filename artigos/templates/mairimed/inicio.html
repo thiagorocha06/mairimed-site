@@ -17,6 +17,22 @@
     </div>
 {% endfor %}
 
+<div class="pagination">
+    <span class="step-links">
+        {% if lista_artigos.has_previous %}
+            <a href="?{{ page_request_var }}={{ lista_artigos.previous_page_number }}">anterior</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ lista_artigos.number }} of {{ lista_artigos.paginator.num_pages }}.
+        </span>
+
+        {% if lista_artigos.has_next %}
+            <a href="?{{ page_request_var }}={{ lista_artigos.next_page_number }}">próxima</a>
+        {% endif %}
+    </span>
+</div>
+
 
 <!-- Favoritos
 	{% if user.is_authenticated %}

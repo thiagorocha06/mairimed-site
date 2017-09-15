@@ -29,7 +29,6 @@ urlpatterns = [
     url(r'^artigo/(?P<pk>\d+)/remover/$', views.remover_artigo, name='remover_artigo'),
 
     url(r'^artigo/(?P<pk>\d+)/favoritos/$', views.favoritos_artigo, name='favoritos_artigo'),
-    #url(r'^artigo/pesquisa/$', views.pesquisa_artigos, name='pesquisa_artigos'),
 
 ### ESCS ###
     url(r'^escs/1_serie/$', views.p_serie, name='1_serie'),

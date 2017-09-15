@@ -6,16 +6,34 @@ from .forms import ArtigoForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def inicio(request):
     estudante = Estudante.objects
     lista_artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
+    paginator = Paginator(lista_artigos, 5) # Show 5 contacts per page
+    page_request_var = "pagina"
+    page = request.GET.get(page_request_var)
+    try:
+        artigos = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        artigos = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        artigos = paginator.page(paginator.num_pages)
 
     termo_pesquisa = request.GET.get("campo_pesquisa")
     if termo_pesquisa:
         lista_artigos = lista_artigos.filter(titulo__icontains=termo_pesquisa)
 
-    return render(request, 'mairimed/inicio.html', {'estudante': estudante, 'lista_artigos': lista_artigos})
+    conteudo = {
+        'lista_artigos': artigos,
+        'estudante': estudante,
+        'page_request_var': page_request_var
+    }
+
+    return render(request, 'mairimed/inicio.html', conteudo)
 
 ### TERMOS ###
 
