@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'artigos',
     'contas',
     'exercicios',
+    'dicionario_medico',
+    'dicionario_farmaceutico',
 ]
 
 MIDDLEWARE = [
