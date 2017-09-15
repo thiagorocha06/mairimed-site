@@ -5,10 +5,16 @@ from contas.models import Estudante
 from .forms import ArtigoForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Q
 
 def inicio(request):
     estudante = Estudante.objects
-    lista_artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')[0:10]
+    lista_artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
+
+    termo_pesquisa = request.GET.get("campo_pesquisa")
+    if termo_pesquisa:
+        lista_artigos = lista_artigos.filter(titulo__icontains=termo_pesquisa)
+
     return render(request, 'mairimed/inicio.html', {'estudante': estudante, 'lista_artigos': lista_artigos})
 
 ### TERMOS ###
