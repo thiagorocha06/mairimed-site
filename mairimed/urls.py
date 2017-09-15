@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'', include('contas.urls')),
     url(r'', include('exercicios.urls')),
     url(r'', include('dicionario_medico.urls')),
+    url(r'', include('dicionario_farmaceutico.urls')),
 ]
 
 if settings.DEBUG:

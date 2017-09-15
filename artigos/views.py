@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Artigo, Farmaco
+from .models import Artigo
 from contas.models import Estudante
 from .forms import ArtigoForm
 from django.contrib.auth.decorators import login_required
@@ -35,16 +35,6 @@ def inicio(request):
     }
 
     return render(request, 'mairimed/inicio.html', conteudo)
-
-### FARMACOS ###
-
-def lista_farmacos(request):
-    farmacos = Farmaco.objects.filter(nome__isnull=False).order_by('nome')
-    return render(request, 'farmacos/lista_farmacos.html', {'farmacos' : farmacos})
-
-def detalhe_farmacos(request, pk):
-    farmaco = get_object_or_404(Farmaco, pk=pk)
-    return render(request, 'farmacos/detalhe_farmacos.html', {'farmaco': farmaco})
 
 ### ARTIGOS ###
 

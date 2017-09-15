@@ -1,0 +1,19 @@
+{% extends 'farmacos_base.html' %}
+
+{% block content %}
+
+<form type="get" action="" style="margin: 20">
+    <input type="text" class="form-control" name="campo_pesquisa"  placeholder="Pesquisar Fármaco" value="{{ request.GET.campo_pesquisa }}" >
+    <input type="submit" class="btn btn-warning center-block" value="Pesquisar">
+</form>
+
+<div class="artigo">
+  <h1>Dicionário Farmacêutico</h1>
+  <ul>
+    {% for farmaco in farmacos %}
+    <li><h2><a href="{% url 'detalhe_farmacos' pk=farmaco.pk %}">{{ farmaco.nome }}</a></h2></li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock content %}
