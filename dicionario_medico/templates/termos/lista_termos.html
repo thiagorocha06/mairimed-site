@@ -1,0 +1,18 @@
+{% extends 'termos_base.html' %}
+
+{% block content %}
+
+<form type="get" action="" style="margin: 20">
+    <input type="text" class="form-control" name="campo_pesquisa"  placeholder="Pesquisar Termo Médcio" value="{{ request.GET.campo_pesquisa }}" >
+    <input type="submit" class="btn btn-warning center-block" value="Pesquisar">
+</form>
+
+<div class="artigo">
+  <h1>Termos Médicos</h1>
+  <ul>
+    {% for termo in termos %}
+    <li><h2><a href="{% url 'detalhe_termos' pk=termo.pk %}">{{ termo.nome }}</a></h2></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock content %}

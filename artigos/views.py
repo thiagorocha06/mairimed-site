@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Artigo, Termo, Farmaco
+from .models import Artigo, Farmaco
 from contas.models import Estudante
 from .forms import ArtigoForm
 from django.contrib.auth.decorators import login_required
@@ -23,6 +23,7 @@ def inicio(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         artigos = paginator.page(paginator.num_pages)
 
+    #Pesquisa
     termo_pesquisa = request.GET.get("campo_pesquisa")
     if termo_pesquisa:
         lista_artigos = lista_artigos.filter(titulo__icontains=termo_pesquisa)
@@ -34,16 +35,6 @@ def inicio(request):
     }
 
     return render(request, 'mairimed/inicio.html', conteudo)
-
-### TERMOS ###
-
-def lista_termos(request):
-    termos = Termo.objects.filter(definicao__isnull=False).order_by('nome')
-    return render(request, 'termos/lista_termos.html', {'termos' : termos})
-
-def detalhe_termos(request, pk):
-    termo = get_object_or_404(Termo, pk=pk)
-    return render(request, 'termos/detalhe_termos.html', {'termo': termo})
 
 ### FARMACOS ###
 

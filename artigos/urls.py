@@ -4,10 +4,6 @@ from . import views
 urlpatterns = [
     url(r'^$', views.inicio, name='inicio'),
 
-### TERMOS ###
-    url(r'^termos/(?P<pk>\d+)/$', views.detalhe_termos, name='detalhe_termos'),
-    url(r'^termos/lista$', views.lista_termos, name='lista_termos'),
-
 ### FARMACOS ###
     url(r'^farmacos/(?P<pk>\d+)/$', views.detalhe_farmacos, name='detalhe_farmacos'),
     url(r'^farmacos/lista$', views.lista_farmacos, name='lista_farmacos'),

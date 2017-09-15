@@ -98,14 +98,6 @@ class Artigo(models.Model):
     def __str__(self):
         return self.titulo
 
-class Termo(models.Model):
-    nome = models.CharField(max_length=50, blank=True, null=True)
-    origem = models.TextField(max_length=50, blank=True, null=True)
-    definicao = models.TextField(blank=True, null=True)
-
-    def __str__(self):
-        return self.nome
-
 class Farmaco(models.Model):
     nome = models.TextField(max_length=50, blank=True, null=True)
     classe = models.TextField(blank=True, null=True)

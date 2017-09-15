@@ -32,15 +32,27 @@
 
         <h1><a href="/"><img src="{% static 'img/mairimed_logo4.png' %}" /></a></h1>
 
-        <div>
+        <div class='menu'>
         <!-- BARRA DE NAVEGACAO -->
-        <nav id="menu" class="menu">
-          <ul>
-            <li><h2><a href="{% url 'inicio' %}">Resumos de Medicina</a></h2></li>
-            <li class="active"><h2><a href="{% url 'exercicios_categorias' %}">Exercícios de Medicina</a></h2></li>
-            <li><h2><a href="{% url 'lista_termos' %}">Dicionário Médico</a></h2></li>
-          </ul>
-        </nav>
+          <nav>
+            <ul>
+  <!--
+              {% url 'inicio' as inicio %}
+              {% url 'categorias_artigos' as categorias_artigos %}
+              {% url 'lista_farmacos' as lista_farmacos %}
+              {% url 'lista_termos' as lista_termos %}
+              {% url 'exercicios_categorias' as exercicios_categorias %}
+              <li {% if request.path == inicio %} class="active" {% endif %}><h2><a href="{% url 'inicio' %}">Resumos de Medicina</a></h2></li>
+  -->
+              <li><h2><a href="{% url 'inicio' %}">Resumos de Medicina </a></h2></li>
+            <!--
+              <li {% if request.path == lista_farmacos %} class="active" {% endif %}><h2><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></h2></li>
+              <li {% if request.path == lista_termos %} class="active" {% endif %}><h2><a href="{% url 'lista_termos' %}">Termos Médicos</a></h2></li>
+            -->
+              <li><h2><a href="{% url 'exercicios_categorias' %}">Exercícios de Medicina</a></h2></li>
+              <li class="active"><h2><a href="{% url 'lista_termos' %}">Dicionário Médico</a></h2></li>
+            </ul>
+          </nav>
         </div>
 
       </div>
@@ -50,14 +62,9 @@
         <div class="row">
           <!-- BARRA LATERAL -->
           <div id="sidebar" class="col-md-3">
-            <div class="barra-lateral">
-              <h1>Exercícios de Medicina</h1>
-              <ul>
-                <li><h2><a href="{% url 'exercicios_ecg' %}">ELETROCARDIOGRAMA</a></h2></li>
-              </ul>
-            </div>
+            {% block sidebar %}
+            {% endblock %}
           </div>
-
           <!-- COLUNA PRINCIPAL -->
           <div class="col-md-8">
           {% block content %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from artigos.models import Artigo, Termo, Farmaco
+from artigos.models import Artigo
 
 class ArtigoModelAdmin(admin.ModelAdmin):
     list_display = ["titulo", "data_de_criacao", "data_de_publicacao", "categoria", "modulo"]
@@ -9,5 +9,3 @@ class ArtigoModelAdmin(admin.ModelAdmin):
         model = Artigo
 
 admin.site.register(Artigo, ArtigoModelAdmin)
-admin.site.register(Farmaco)
-admin.site.register(Termo)
