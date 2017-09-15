@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page': '/'}),
     url(r'', include('artigos.urls')),
     url(r'', include('contas.urls')),
+    url(r'', include('exercicios.urls')),
 ]
 
 if settings.DEBUG:

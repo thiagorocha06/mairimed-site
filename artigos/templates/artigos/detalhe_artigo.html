@@ -1,29 +1,76 @@
 {% extends 'mairimed/base.html' %}
 
 {% block sidebar %}
+<div class="barra-lateral">
+  <h1>Tópicos</h1>
+  <ul>
+    {% if artigo.introducao %}
+    <li><h2><a href="#intoducao">INTRODUÇÃO</a></h2></li>
+    {% endif %}
+    {% if artigo.epidemiologia %}
+    <li><h2><a href="#epidemiologia">EPIDEMIOLOGIA</a></h2></li>
+    {% endif %}
+    {% if artigo.classificacao %}
+    <li><h2><a href="#classificacao">CLASSIFICAÇÃO</a></h2></li>
+    {% endif %}
+
+    <li><h2><a href="#etiologia_fisiopatologia">ETIOLOGIA E FISIOPATOLOGIA</a></h2></li>
+
+    <li><h2>DIAGNÓSTICO</h2></li>
+    {% if artigo.historia_clinica %}
+    <li><h3><a href="#historia_clinica">HISTÓRIA CLÍNICA</a></h3></li>
+    {% endif %}
+    {% if artigo.exame_fisico %}
+    <li><h3><a href="#exame_fisico">EXAME FÍSICO</a></h3></li>
+    {% endif %}
+
+    <li><h3><a href="#exames_complementares">EXAMES COMPLEMENTARES</a></h3></li>
+
+    {% if artigo.criterios_diagnosticos %}
+    <li><h3><a href="#criterios_diagnosticos">CRITÉRIOS DIAGNÓSTICOS</a></h3></li>
+    {% endif %}
+    {% if artigo.diagnostico_diferencial %}
+    <li><h3><a href="#diagnostico_diferencial">DIAGNÓSTICO DIFERENCIAL</a></h3></li>
+    {% endif %}
+
+    {% if artigo.top1 %}
+    <li><h3><a href="#top1">{{ artigo.top1|linebreaksbr }}</a></h3></li>
+    {% endif %}
+
+    <li><h2>TRATAMENTO E MANEJO</h2></li>
+    {% if artigo.tratamento_nao_medicamentoso %}
+    <li><h3><a href="#tratamento_nao_medicamentoso">MEDIDAS GERAIS</a></h3></li>
+    {% endif %}
+    {% if artigo.tratamento_medicamentoso %}
+    <li><h3><a href="#tratamento_medicamentoso">TRATAMENTO FARMACOLÓGICO</a></h3></li>
+    {% endif %}
+    {% if artigo.tratamento_intervencionista %}
+    <li><h3><a href="#tratamento_intervencionista">TRATAMENTO INTERVENCIONISTA</a></h3></li>
+    {% endif %}
+    {% if artigo.profilaxia %}
+    <li><h2><a href="#profilaxia">PROFILAXIA</a></h2></li>
+    {% endif %}
+    {% if artigo.prognostico %}
+    <li><h2><a href="#prognostico">PROGNÓSTICO</a></h2></li>
+    {% endif %}
+    {% if artigo.complicacoes %}
+    <li><h2><a href="#complicacoes">COMPLICAÇÕES</a></h2></li>
+    {% endif %}
+    {% if artigo.algoritmo_img1 %}
+    <li><h2><a href="#algoritmo_img1">ALGORITMO</a></h2></li>
+    {% endif %}
+
+  </ul>
+</div>
 {% endblock %}
 
 {% block content %}
     <div class="artigo">
 
-      <!-- Favoritos
-        {% if artigo in estudante.artigos_favoritos.all %}
-          <div class="date">
-              <p>Artigo Favorito</p>
-              <a type="button">Remover dos Favoritos</a>
-          </div>
-        {%	else	%}
-          <div class="date">
-              <p>Artigo Não Favorito</p>
-              <a type="button" href="{% url 'favoritos_artigo' pk=artigo.pk %}">Adicionar aos Favoritos</a>
-          </div>
-        {% endif %}
-      -->
-
         <h1>{{ artigo.titulo }}</h1>
 
         {% if artigo.introducao %}
-          <h2>INTRODUÇÃO</h2>
+          <h2 id='introducao'>INTRODUÇÃO</h2>
           <p>{{ artigo.introducao|linebreaksbr }}</p>
         {% endif %}
 
@@ -32,7 +79,7 @@
         {% endif %}
 
         {% if artigo.epidemiologia %}
-          <h2>EPIDEMIOLOGIA</h2>
+          <h2 id='epidemiologia'>EPIDEMIOLOGIA</h2>
           <p>{{ artigo.epidemiologia|linebreaksbr }}</p>
         {% endif %}
 
@@ -41,7 +88,7 @@
         {% endif %}
 
         {% if artigo.classificacao %}
-          <h2>CLASSIFICAÇÃO</h2>
+          <h2 id='classificacao'>CLASSIFICAÇÃO</h2>
           <p>{{ artigo.classificacao|linebreaksbr }}</p>
         {% endif %}
 
@@ -51,7 +98,7 @@
 
         <!-- ETIOLOGIA E FISIOPATOLOGIA -->
 
-        <h2>ETIOLOGIA E FISIOPATOLOGIA</h2>
+        <h2 id='etiologia_fisiopatologia'>ETIOLOGIA E FISIOPATOLOGIA</h2>
         {% if artigo.etiologia_fisiopatologia %}
           <p>{{ artigo.etiologia_fisiopatologia|linebreaksbr }}</p>
         {% endif %}
@@ -96,13 +143,13 @@
 
         <!-- DIAGNOSTICO -->
 
-        <h2>DIAGNÓSTICO</h2>
+        <h2 id='diagnostico'>DIAGNÓSTICO</h2>
         {% if artigo.diagnostico %}
         <p>{{ artigo.diagnostico|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.historia_clinica %}
-          <h3>HISTÓRIA CLÍNICA</h3>
+          <h3 id='historia_clinica'>HISTÓRIA CLÍNICA</h3>
           <p>{{ artigo.historia_clinica|linebreaksbr }}</p>
         {% endif %}
 
@@ -111,11 +158,11 @@
         {% endif %}
 
         {% if artigo.exame_fisico %}
-          <h3>EXAME FÍSICO</h3>
+          <h3 id='exame_fisico'>EXAME FÍSICO</h3>
           <p>{{ artigo.exame_fisico|linebreaksbr }}</p>
         {% endif %}
 
-        <h3>EXAMES COMPLEMENTARES</h3>
+        <h3 id='exames_complementares'>EXAMES COMPLEMENTARES</h3>
         {% if artigo.exames_complementares %}
           <p>{{ artigo.exames_complementares|linebreaksbr }}</p>
         {% endif %}
@@ -151,12 +198,12 @@
         {% endif %}
 
         {% if artigo.criterios_diagnosticos %}
-          <h3>CRITÉRIOS DIAGNÓSTICOS</h3>
+          <h3 id='criterios_diagnosticos'>CRITÉRIOS DIAGNÓSTICOS</h3>
           <p>{{ artigo.criterios_diagnosticos|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.diagnostico_diferencial %}
-          <h3>DIAGNÓSTICO DIFERENCIAL</h3>
+          <h3 id='diagnostico_diferencial'>DIAGNÓSTICO DIFERENCIAL</h3>
           <p>{{ artigo.diagnostico_diferencial|linebreaksbr }}</p>
         {% endif %}
 
@@ -167,7 +214,7 @@
         <!-- TOPICO ACESSORIO -->
 
         {% if artigo.top1 %}
-          <h2>{{ artigo.top1|linebreaksbr }}</h2>
+          <h2 id='top1'>{{ artigo.top1|linebreaksbr }}</h2>
           <p>{{ artigo.texto1|linebreaksbr }}</p>
           {% if artigo.top1_img1 %}
             <img src="{{ artigo.top1_img1.url }}" width="800" />
@@ -179,17 +226,17 @@
 
         <!-- TRATAMENTO -->
 
-        <h2>TRATAMENTO E MANEJO</h2>
+        <h2 id='tratamento_e_manejo'>TRATAMENTO E MANEJO</h2>
         {% if artigo.tratamento_e_manejo %}
           <p>{{ artigo.tratamento_e_manejo|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.tratamento_nao_medicamentoso %}
-          <h3>MEDIDAS GERAIS</h3>
+          <h3 id='tratamento_nao_medicamentoso'>MEDIDAS GERAIS</h3>
           <p>{{ artigo.tratamento_nao_medicamentoso|linebreaksbr }}</p>
         {% endif %}
 
-        <h3>TRATAMENTO FARMACOLÓGICO</h3>
+        <h3 id='tratamento_medicamentoso'>TRATAMENTO FARMACOLÓGICO</h3>
         {% if artigo.tratamento_medicamentoso %}
           <p>{{ artigo.tratamento_medicamentoso|linebreaksbr }}</p>
         {% endif %}
@@ -225,7 +272,7 @@
         {% endif %}
 
         {% if artigo.tratamento_intervencionista %}
-          <h3>TRATAMENTO INTERVENCIONISTA</h3>
+          <h3 id='tratamento_intervencionista'>TRATAMENTO INTERVENCIONISTA</h3>
           <p>{{ artigo.tratamento_intervencionista|linebreaksbr }}</p>
         {% endif %}
 
@@ -234,7 +281,7 @@
         {% endif %}
 
         {% if artigo.profilaxia %}
-          <h2>PROFILAXIA</h2>
+          <h2 id='profilaxia'>PROFILAXIA</h2>
           <p>{{ artigo.profilaxia|linebreaksbr }}</p>
         {% endif %}
 
@@ -243,17 +290,17 @@
         {% endif %}
 
         {% if artigo.prognostico %}
-          <h2>PROGNÓSTICO</h2>
+          <h2 id='prognostico'>PROGNÓSTICO</h2>
           <p>{{ artigo.prognostico|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.complicacoes %}
-          <h2>COMPLICAÇÕES</h2>
+          <h2 id='complicacoes'>COMPLICAÇÕES</h2>
           <p>{{ artigo.complicacoes|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.algoritmo_img1 %}
-          <h2>ALGORITMO</h2>
+          <h2 id='algoritmo_img1'>ALGORITMO</h2>
           {% if artigo.algoritmo_img1 %}
             <img src="{{ artigo.algoritmo_img1.url }}" width="800" />
           {% endif %}
@@ -264,9 +311,23 @@
         {% endif %}
 
         {% if artigo.referencias %}
-          <h2>REFERENCIAS</h2>
+          <h2 id="referencias">REFERÊNCIAS</h2>
           <p>{{ artigo.referencias|linebreaksbr }}</p>
         {% endif %}
+
+        <!-- Favoritos
+          {% if artigo in estudante.artigos_favoritos.all %}
+            <div class="date">
+                <p>Artigo Favorito</p>
+                <a type="button">Remover dos Favoritos</a>
+            </div>
+          {%	else	%}
+            <div class="date">
+                <p>Artigo Não Favorito</p>
+                <a type="button" href="{% url 'favoritos_artigo' pk=artigo.pk %}">Adicionar aos Favoritos</a>
+            </div>
+          {% endif %}
+        -->
 
     </div>
 {% endblock %}

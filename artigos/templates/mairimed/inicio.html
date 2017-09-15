@@ -1,18 +1,39 @@
 {% extends "mairimed/base.html" %}
 {% load staticfiles%}
 
+{% block sidebar %}
+<div class="barra-lateral">
+  <h1>ESCS</h1>
+  <ul>
+    <li><h2><a href="{% url '1_serie' %}">1ª Série</a></h2></li>
+    <li><h2><a href="{% url '2_serie' %}">2ª Série</a></h2></li>
+    <li><h2><a href="{% url '3_serie' %}">3ª Série</a></h2></li>
+    <li><h2><a href="{% url '4_serie' %}">4ª Série</a></h2></li>
+  </ul>
+</div>
+
+<div class="barra-lateral">
+  <h1>Especialidades</h1>
+  <ul>
+    <li><h2><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></h2></li>
+    <li><h2><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></h2></li>
+    <li><h2><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></h2></li>
+    <li><h2><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></h2></li>
+    <li><h2><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></h2></li>
+    <li><h2><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></h2></li>
+  </ul>
+</div>
+{% endblock %}
+
 {% block content %}
 
-	<div class="artigo">
-		<img src="{% static 'img/logoescs.png' %}" width="100"/>
-		<h1>ESCS</h1>
-		<ul>
-			<li><h2><a href="{% url '1_serie' %}">1ª Série</a></h2></li>
-			<li><h2><a href="{% url '2_serie' %}">2ª Série</a></h2></li>
-			<li><h2><a href="{% url '3_serie' %}">3ª Série</a></h2></li>
-			<li><h2><a href="{% url '4_serie' %}">4ª Série</a></h2></li>
-		</ul>
-	</div>
+{% for artigo in lista_artigos %}
+    <div class="artigo">
+      <h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2>
+      <p>{{ artigo.introducao|truncatechars:200 }}</p>
+    </div>
+{% endfor %}
+
 
 <!-- Favoritos
 	{% if user.is_authenticated %}
