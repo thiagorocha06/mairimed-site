@@ -8,7 +8,6 @@
 </form>
 
 <div class="artigo">
-  <h1>Dicionário Farmacêutico</h1>
   <ul>
     {% for farmaco in farmacos %}
     <li><h2><a href="{% url 'detalhe_farmacos' pk=farmaco.pk %}">{{ farmaco.nome }}</a></h2></li>
@@ -23,7 +22,7 @@
         {% endif %}
 
         <span class="current">
-            Página {{ farmacos.number }} de {{ farmacos.paginator.num_pages }}.
+            Página {{ farmacos.number }} de {{ farmacos.paginator.num_pages }}
         </span>
 
         {% if farmacos.has_next %}

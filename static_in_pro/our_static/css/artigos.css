@@ -1,4 +1,5 @@
 
+/* CABECALHO */
 
 .page-header {
     background-color: #ff9400;
@@ -36,6 +37,8 @@
     text-decoration: none;
 }
 
+/* MENU */
+
 .menu-superior ul, .menu-superior li {
   padding: 2px 10px;
   list-style-type: none;
@@ -68,28 +71,59 @@
     border-bottom:3px solid #EDEDED;
 }
 
+/* LINHA ALFABETICA */
+
+.lista-horizontal li {
+  padding-top: 0px;
+  padding-right: 6px;
+  padding-bottom: 5px;
+  padding-left: 6px;
+  list-style-type: none;
+  display: inline-block;
+  /* visual do link */
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.lista-horizontal h1, .lista-horizontal h1 a, .lista-horizontal h1 a:visited {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15pt;
+  font-weight: bold;
+  color: #d45500;
+}
+
+.linhas-horizontais {
+  border-top: 3px solid #EDEDED;
+  border-bottom: 3px solid #EDEDED;
+}
+
 .content {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 .date {
-    float: right;
-    color: #828282;
+  float: right;
+  color: #828282;
 }
 
 .save {
-    float: right;
+  float: right;
 }
 
 .texto-centro h1, .texto-centro h2, .texto-centro h3, .texto-centro h4 {
-    font-family: 'Ubuntu', sans-serif;
-    text-align: left;
-    font-weight: bold;
-    font-size: 15pt;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  color: #d45500;
+  font-size: 20pt;
 }
 
+/* ARTIGO */
+
 .artigo {
-    margin-bottom: 70px;
+  margin-bottom: 70px;
 }
 
 .artigo h1, .artigo h1 a, .artigo h1 a:visited {
@@ -132,6 +166,8 @@
     display: block;
     margin: auto;
 }
+
+/* BAARA LATERAL */
 
 .sidebar {
   float: left;
