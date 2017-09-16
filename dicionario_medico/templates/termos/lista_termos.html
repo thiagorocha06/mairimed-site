@@ -8,11 +8,28 @@
 </form>
 
 <div class="artigo">
-  <h1>Termos Médicos</h1>
   <ul>
     {% for termo in termos %}
     <li><h2><a href="{% url 'detalhe_termos' pk=termo.pk %}">{{ termo.nome }}</a></h2></li>
+    <p>{{ termo.definicao }}</p>
     {% endfor %}
   </ul>
 </div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if termos.has_previous %}
+            <a href="?{{ page_request_var }}={{ termos.previous_page_number }}">anterior</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ termos.number }} of {{ termos.paginator.num_pages }}.
+        </span>
+
+        {% if termos.has_next %}
+            <a href="?{{ page_request_var }}={{ termos.next_page_number }}">próxima</a>
+        {% endif %}
+    </span>
+</div>
+
 {% endblock content %}

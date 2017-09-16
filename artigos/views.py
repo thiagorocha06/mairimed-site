@@ -11,6 +11,13 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def inicio(request):
     estudante = Estudante.objects
     lista_artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
+
+    #Pesquisa
+    termo_pesquisa = request.GET.get("campo_pesquisa")
+    if termo_pesquisa:
+        lista_artigos = lista_artigos.filter(titulo__icontains=termo_pesquisa)
+
+    #Paginacao
     paginator = Paginator(lista_artigos, 5) # Show 5 contacts per page
     page_request_var = "pagina"
     page = request.GET.get(page_request_var)
@@ -22,11 +29,6 @@ def inicio(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         artigos = paginator.page(paginator.num_pages)
-
-    #Pesquisa
-    termo_pesquisa = request.GET.get("campo_pesquisa")
-    if termo_pesquisa:
-        lista_artigos = lista_artigos.filter(titulo__icontains=termo_pesquisa)
 
     conteudo = {
         'lista_artigos': artigos,

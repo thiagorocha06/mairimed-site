@@ -16,4 +16,20 @@
   </ul>
 </div>
 
+<div class="pagination">
+    <span class="step-links">
+        {% if farmacos.has_previous %}
+            <a href="?{{ page_request_var }}={{ farmacos.previous_page_number }}">anterior</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ farmacos.number }} of {{ farmacos.paginator.num_pages }}.
+        </span>
+
+        {% if farmacos.has_next %}
+            <a href="?{{ page_request_var }}={{ farmacos.next_page_number }}">próxima</a>
+        {% endif %}
+    </span>
+</div>
+
 {% endblock content %}
