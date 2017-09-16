@@ -95,6 +95,8 @@ def termo_alfabetico(request):
     termo_pesquisa = request.GET.get("campo_pesquisa")
     if termo_pesquisa:
         lista_termos = lista_termos.filter(nome__icontains=termo_pesquisa)
+        lista_termos_a = lista_termos
+        letra = ""
 
     #Paginacao
     paginator = Paginator(lista_termos_a, 25) # Show 5 contacts per page

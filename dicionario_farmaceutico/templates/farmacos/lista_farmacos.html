@@ -32,3 +32,18 @@
 </div>
 
 {% endblock content %}
+
+{% block sidebar %}
+<div class="barra-lateral">
+  <h1>Classes</h1>
+  <ul>
+    <li><h2><a href="{% url 'aine_farmacos' %}">AINE</a></h2></li>
+    <li><h2><a href="{% url 'antihipertensivos_farmacos' %}">Anti-hipertensivo</a></h2></li>
+    <li><h2><a href="{% url 'antiagregantes_farmacos' %}">Antiagregante Plaquetário</a></h2></li>
+    <li><h2><a href="{% url 'antianginosos_farmacos' %}">Antianginoso</a></h2></li>
+    <li><h2><a href="{% url 'antibioticos_farmacos' %}">Antibiótico</a></h2></li>
+    <li><h2><a href="{% url 'anticoagulantes_farmacos' %}">Anticoagulante</a></h2></li>
+    <li><h2><a href="{% url 'hipolipemiantes_farmacos' %}">Hipolipemiante</a></h2></li>
+  </ul>
+</div>
+{% endblock %}

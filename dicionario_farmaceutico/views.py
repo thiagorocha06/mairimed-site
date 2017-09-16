@@ -2,8 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Farmaco
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-### FARMACOS ###
-
 def lista_farmacos(request):
     lista_farmacos = Farmaco.objects.filter(nome__isnull=False).order_by('nome')
 
@@ -27,7 +25,7 @@ def lista_farmacos(request):
 
     conteudo = {
         'farmacos' : farmacos,
-        'page_request_var': page_request_var
+        'page_request_var': page_request_var,
     }
 
     return render(request, 'farmacos/lista_farmacos.html', conteudo)
@@ -35,3 +33,7 @@ def lista_farmacos(request):
 def detalhe_farmacos(request, pk):
     farmaco = get_object_or_404(Farmaco, pk=pk)
     return render(request, 'farmacos/detalhe_farmacos.html', {'farmaco': farmaco})
+
+def classe_farmacos(request):
+    farmacos = Farmaco.objects.filter(nome__isnull=False).order_by('nome')
+    return render(request, 'farmacos/classe_farmacos.html', {'farmacos' : farmacos})
