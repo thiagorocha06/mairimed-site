@@ -3,28 +3,25 @@
 {% block content %}
 
 <!-- CARD DO FARMACO -->
+<div class="farmaco-card">
+<h1>{{ farmaco.nome }}</h1>
+</div>
   <div class="linhas-horizontais">
-  </div>
-  <div class="farmaco-card">
-    <h1>{{ farmaco.nome }}</h1>
-    {% if farmaco.classe %}
-    <h3>Classe:</h3>
-    <p>{{ farmaco.classe|linebreaksbr }}</p>
-    {% endif %}
-  </div>
-  <div class="farmaco-card">
-    {% if farmaco.subclasse %}
-    <h3>Subclasse:</h3>
-    <p>{{ farmaco.subclasse|linebreaksbr }}</p>
-    {% endif %}
-  </div>
-  <div class="farmaco-card">
-    {% if farmaco.marcas %}
-    <h3>Marcas:</h3>
-    <p>{{ farmaco.marcas|linebreaksbr }}</p>
-    {% endif %}
-  </div>
-  <div class="linhas-horizontais">
+    <div class="farmaco-card">
+      {% if farmaco.marcas %}
+      <h3>Marcas:</h3>
+      <p>{{ farmaco.marcas|linebreaksbr }}</p>
+      {% endif %}
+    </div>
+    <div class="farmaco-card">
+      {% if farmaco.classe %}
+      <h3>Categorias:</h3>
+      <p>{{ farmaco.classe|linebreaksbr }},</p>
+      {% endif %}
+      {% if farmaco.subclasse %}
+      <p>{{ farmaco.subclasse|linebreaksbr }}</p>
+      {% endif %}
+    </div>
   </div>
 
 <!-- CONTEUDO -->

@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^farmacos/(?P<pk>\d+)/$', views.detalhe_farmacos, name='detalhe_farmacos'),
     url(r'^farmacos/lista$', views.lista_farmacos, name='lista_farmacos'),
 
+    # CLASSES
     url(r'^farmacos/aine/$', views.classe_farmacos, name='aine_farmacos'),
     url(r'^farmacos/antihipertensivos/$', views.classe_farmacos, name='antihipertensivos_farmacos'),
     url(r'^farmacos/antiagregantes/$', views.classe_farmacos, name='antiagregantes_farmacos'),
