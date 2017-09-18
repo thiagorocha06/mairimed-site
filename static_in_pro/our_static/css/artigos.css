@@ -95,8 +95,8 @@
 }
 
 .linhas-horizontais {
-  border-top: 3px solid #EDEDED;
-  border-bottom: 3px solid #EDEDED;
+  border-top: 2px solid #9E9E9E;
+  border-bottom: 2px solid #9E9E9E;
 }
 
 .content {
@@ -173,10 +173,16 @@
   float: left;
   width: 200px;
   border: 1px solid #000;
+  position: fixed;
 }
 
 .barra-lateral {
     margin-bottom: 20px;
+    background: #fff;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
 }
 
 .barra-lateral h1, .barra-lateral h1 a, .barra-lateral h1 a:visited {
@@ -198,5 +204,33 @@
     font-family: 'Ubuntu', sans-serif;
     font-size: 7pt;
     font-weight: bold;
-    color: #ff6600;
+    color: #ff7f2a;
+}
+
+/* FARMACO CARD */
+.farmaco-card {
+  padding-top: 0px;
+  padding-right: 6px;
+  padding-bottom: 0px;
+  padding-left: 6px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.farmaco-card h1 {
+    font-weight: bold;
+    font-size: 25pt;
+    color: #d45500;
+}
+
+.farmaco-card h2, .farmaco-card h3 {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 10pt;
+    color: #878787;
+}
+
+.farmaco-card p {
+    display: inline-block;
+    font-size: 10pt;
+    color: #878787;
 }
