@@ -31,10 +31,12 @@
     text-align: left;
 }
 
-.final-pag p {
-    color: #000;
+.final-pag p, .final-pag a, .final-pag a:visited {
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
     font-size: 8pt;
     text-decoration: none;
+    text-align: center;
 }
 
 /* MENU */

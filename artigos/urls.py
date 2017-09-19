@@ -3,6 +3,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.inicio, name='inicio'),
+    url(r'^mairimed/termos_uso/$', views.termos_uso, name='termos_uso'),
+    url(r'^mairimed/sobre/$', views.sobre, name='sobre'),
 
 ### ARTIGOS ###
     url(r'^artigo/infectologia/$', views.infectologia_artigos, name='infectologia_artigos'),

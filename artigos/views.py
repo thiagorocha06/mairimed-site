@@ -38,6 +38,12 @@ def inicio(request):
 
     return render(request, 'mairimed/inicio.html', conteudo)
 
+def termos_uso(request):
+    return render(request, 'mairimed/termos_uso.html')
+
+def sobre(request):
+    return render(request, 'mairimed/sobre.html')
+
 ### ARTIGOS ###
 
 def infectologia_artigos(request):
