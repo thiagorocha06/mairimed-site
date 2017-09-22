@@ -32,7 +32,7 @@
 
         <!-- ETIOLOGIA E FISIOPATOLOGIA -->
 
-        <h2 id='etiologia_fisiopatologia'>{{ artigos.etio_top }}</h2>
+        <h2 id='etiologia_fisiopatologia'>{{ artigo.etio_top }}</h2>
         {% if artigo.etiologia_fisiopatologia %}
           <p>{{ artigo.etiologia_fisiopatologia|linebreaksbr }}</p>
         {% endif %}
@@ -77,13 +77,13 @@
 
         <!-- DIAGNOSTICO -->
 
-        <h2 id='diagnostico'>{{ artigos.diag_top }}</h2>
+        <h2 id='diagnostico'>{{ artigo.diag_top }}</h2>
         {% if artigo.diagnostico %}
         <p>{{ artigo.diagnostico|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.historia_clinica %}
-          <h3 id='historia_clinica'>{{ artigos.historia_top }}</h3>
+          <h3 id='historia_clinica'>{{ artigo.historia_top }}</h3>
           <p>{{ artigo.historia_clinica|linebreaksbr }}</p>
         {% endif %}
 
@@ -92,11 +92,11 @@
         {% endif %}
 
         {% if artigo.exame_fisico %}
-          <h3 id='exame_fisico'>{{ artigos.ef_top }}</h3>
+          <h3 id='exame_fisico'>{{ artigo.ef_top }}</h3>
           <p>{{ artigo.exame_fisico|linebreaksbr }}</p>
         {% endif %}
 
-        <h3 id='exames_complementares'>{{ artigos.exames_top }}</h3>
+        <h3 id='exames_complementares'>{{ artigo.exames_top }}</h3>
         {% if artigo.exames_complementares %}
           <p>{{ artigo.exames_complementares|linebreaksbr }}</p>
         {% endif %}
@@ -137,7 +137,7 @@
         {% endif %}
 
         {% if artigo.diagnostico_diferencial %}
-          <h3 id='diagnostico_diferencial'>{{ artigos.dd_top }}</h3>
+          <h3 id='diagnostico_diferencial'>{{ artigo.dd_top }}</h3>
           <p>{{ artigo.diagnostico_diferencial|linebreaksbr }}</p>
         {% endif %}
 
@@ -160,17 +160,17 @@
 
         <!-- TRATAMENTO -->
 
-        <h2 id='tratamento_e_manejo'>{{ artigos.tratamento_top }}</h2>
+        <h2 id='tratamento_e_manejo'>{{ artigo.tratamento_top }}</h2>
         {% if artigo.tratamento_e_manejo %}
           <p>{{ artigo.tratamento_e_manejo|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.tratamento_nao_medicamentoso %}
-          <h3 id='tratamento_nao_medicamentoso'>{{ artigos.medidas_top }}</h3>
+          <h3 id='tratamento_nao_medicamentoso'>{{ artigo.medidas_top }}</h3>
           <p>{{ artigo.tratamento_nao_medicamentoso|linebreaksbr }}</p>
         {% endif %}
 
-        <h3 id='tratamento_medicamentoso'>{{ artigos.trat_med_top }}</h3>
+        <h3 id='tratamento_medicamentoso'>{{ artigo.trat_med_top }}</h3>
         {% if artigo.tratamento_medicamentoso %}
           <p>{{ artigo.tratamento_medicamentoso|linebreaksbr }}</p>
         {% endif %}
@@ -206,7 +206,7 @@
         {% endif %}
 
         {% if artigo.tratamento_intervencionista %}
-          <h3 id='tratamento_intervencionista'>{{ artigos.trat_int_top }}</h3>
+          <h3 id='tratamento_intervencionista'>{{ artigo.trat_int_top }}</h3>
           <p>{{ artigo.tratamento_intervencionista|linebreaksbr }}</p>
         {% endif %}
 
@@ -215,7 +215,7 @@
         {% endif %}
 
         {% if artigo.profilaxia %}
-          <h2 id='profilaxia'>{{ artigos.profilaxia_top }}</h2>
+          <h2 id='profilaxia'>{{ artigo.profilaxia_top }}</h2>
           <p>{{ artigo.profilaxia|linebreaksbr }}</p>
         {% endif %}
 
@@ -224,17 +224,17 @@
         {% endif %}
 
         {% if artigo.prognostico %}
-          <h2 id='prognostico'>{{ artigos.prognostico_top }}</h2>
+          <h2 id='prognostico'>{{ artigo.prognostico_top }}</h2>
           <p>{{ artigo.prognostico|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.complicacoes %}
-          <h2 id='complicacoes'>{{ artigos.complicacoes_top }}</h2>
+          <h2 id='complicacoes'>{{ artigo.complicacoes_top }}</h2>
           <p>{{ artigo.complicacoes|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.algoritmo_img1 %}
-          <h2 id='algoritmo_img1'>{{ artigos.algoritmo_top }}</h2>
+          <h2 id='algoritmo_img1'>{{ artigo.algoritmo_top }}</h2>
           {% if artigo.algoritmo_img1 %}
             <img src="{{ artigo.algoritmo_img1.url }}" width="800" />
           {% endif %}
@@ -245,7 +245,7 @@
         {% endif %}
 
         {% if artigo.referencias %}
-          <h2 id="referencias">{{ artigos.referencias_top }}</h2>
+          <h2 id="referencias">{{ artigo.referencias_top }}</h2>
           <p>{{ artigo.referencias|linebreaksbr }}</p>
         {% endif %}
 
