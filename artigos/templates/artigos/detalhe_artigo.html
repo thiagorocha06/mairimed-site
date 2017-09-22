@@ -4,7 +4,7 @@
         <h1>{{ artigo.titulo }}</h1>
 
         {% if artigo.introducao %}
-          <h2 id='introducao'>INTRODUÇÃO</h2>
+          <h2 id='introducao'>{{ artigo.intro_top }}</h2>
           <p>{{ artigo.introducao|linebreaksbr }}</p>
         {% endif %}
 
@@ -13,7 +13,7 @@
         {% endif %}
 
         {% if artigo.epidemiologia %}
-          <h2 id='epidemiologia'>EPIDEMIOLOGIA</h2>
+          <h2 id='epidemiologia'>{{ artigo.epidemio_top }}</h2>
           <p>{{ artigo.epidemiologia|linebreaksbr }}</p>
         {% endif %}
 
@@ -22,7 +22,7 @@
         {% endif %}
 
         {% if artigo.classificacao %}
-          <h2 id='classificacao'>CLASSIFICAÇÃO</h2>
+          <h2 id='classificacao'>{{ artigo.class_top }}</h2>
           <p>{{ artigo.classificacao|linebreaksbr }}</p>
         {% endif %}
 
@@ -32,7 +32,7 @@
 
         <!-- ETIOLOGIA E FISIOPATOLOGIA -->
 
-        <h2 id='etiologia_fisiopatologia'>ETIOLOGIA E FISIOPATOLOGIA</h2>
+        <h2 id='etiologia_fisiopatologia'>{{ artigos.etio_top }}</h2>
         {% if artigo.etiologia_fisiopatologia %}
           <p>{{ artigo.etiologia_fisiopatologia|linebreaksbr }}</p>
         {% endif %}
@@ -77,13 +77,13 @@
 
         <!-- DIAGNOSTICO -->
 
-        <h2 id='diagnostico'>DIAGNÓSTICO</h2>
+        <h2 id='diagnostico'>{{ artigos.diag_top }}</h2>
         {% if artigo.diagnostico %}
         <p>{{ artigo.diagnostico|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.historia_clinica %}
-          <h3 id='historia_clinica'>HISTÓRIA CLÍNICA</h3>
+          <h3 id='historia_clinica'>{{ artigos.historia_top }}</h3>
           <p>{{ artigo.historia_clinica|linebreaksbr }}</p>
         {% endif %}
 
@@ -92,11 +92,11 @@
         {% endif %}
 
         {% if artigo.exame_fisico %}
-          <h3 id='exame_fisico'>EXAME FÍSICO</h3>
+          <h3 id='exame_fisico'>{{ artigos.ef_top }}</h3>
           <p>{{ artigo.exame_fisico|linebreaksbr }}</p>
         {% endif %}
 
-        <h3 id='exames_complementares'>EXAMES COMPLEMENTARES</h3>
+        <h3 id='exames_complementares'>{{ artigos.exames_top }}</h3>
         {% if artigo.exames_complementares %}
           <p>{{ artigo.exames_complementares|linebreaksbr }}</p>
         {% endif %}
@@ -132,12 +132,12 @@
         {% endif %}
 
         {% if artigo.criterios_diagnosticos %}
-          <h3 id='criterios_diagnosticos'>CRITÉRIOS DIAGNÓSTICOS</h3>
+          <h3 id='criterios_diagnosticos'>{{ criterios_top }}</h3>
           <p>{{ artigo.criterios_diagnosticos|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.diagnostico_diferencial %}
-          <h3 id='diagnostico_diferencial'>DIAGNÓSTICO DIFERENCIAL</h3>
+          <h3 id='diagnostico_diferencial'>{{ artigos.dd_top }}</h3>
           <p>{{ artigo.diagnostico_diferencial|linebreaksbr }}</p>
         {% endif %}
 
@@ -160,17 +160,17 @@
 
         <!-- TRATAMENTO -->
 
-        <h2 id='tratamento_e_manejo'>TRATAMENTO E MANEJO</h2>
+        <h2 id='tratamento_e_manejo'>{{ artigos.tratamento_top }}</h2>
         {% if artigo.tratamento_e_manejo %}
           <p>{{ artigo.tratamento_e_manejo|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.tratamento_nao_medicamentoso %}
-          <h3 id='tratamento_nao_medicamentoso'>MEDIDAS GERAIS</h3>
+          <h3 id='tratamento_nao_medicamentoso'>{{ artigos.medidas_top }}</h3>
           <p>{{ artigo.tratamento_nao_medicamentoso|linebreaksbr }}</p>
         {% endif %}
 
-        <h3 id='tratamento_medicamentoso'>TRATAMENTO FARMACOLÓGICO</h3>
+        <h3 id='tratamento_medicamentoso'>{{ artigos.trat_med_top }}</h3>
         {% if artigo.tratamento_medicamentoso %}
           <p>{{ artigo.tratamento_medicamentoso|linebreaksbr }}</p>
         {% endif %}
@@ -206,7 +206,7 @@
         {% endif %}
 
         {% if artigo.tratamento_intervencionista %}
-          <h3 id='tratamento_intervencionista'>TRATAMENTO INTERVENCIONISTA</h3>
+          <h3 id='tratamento_intervencionista'>{{ artigos.trat_int_top }}</h3>
           <p>{{ artigo.tratamento_intervencionista|linebreaksbr }}</p>
         {% endif %}
 
@@ -215,7 +215,7 @@
         {% endif %}
 
         {% if artigo.profilaxia %}
-          <h2 id='profilaxia'>PROFILAXIA</h2>
+          <h2 id='profilaxia'>{{ artigos.profilaxia_top }}</h2>
           <p>{{ artigo.profilaxia|linebreaksbr }}</p>
         {% endif %}
 
@@ -224,17 +224,17 @@
         {% endif %}
 
         {% if artigo.prognostico %}
-          <h2 id='prognostico'>PROGNÓSTICO</h2>
+          <h2 id='prognostico'>{{ artigos.prognostico_top }}</h2>
           <p>{{ artigo.prognostico|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.complicacoes %}
-          <h2 id='complicacoes'>COMPLICAÇÕES</h2>
+          <h2 id='complicacoes'>{{ artigos.complicacoes_top }}</h2>
           <p>{{ artigo.complicacoes|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.algoritmo_img1 %}
-          <h2 id='algoritmo_img1'>ALGORITMO</h2>
+          <h2 id='algoritmo_img1'>{{ artigos.algoritmo_top }}</h2>
           {% if artigo.algoritmo_img1 %}
             <img src="{{ artigo.algoritmo_img1.url }}" width="800" />
           {% endif %}
@@ -245,7 +245,7 @@
         {% endif %}
 
         {% if artigo.referencias %}
-          <h2 id="referencias">REFERÊNCIAS</h2>
+          <h2 id="referencias">{{ artigos.referencias_top }}</h2>
           <p>{{ artigo.referencias|linebreaksbr }}</p>
         {% endif %}
 
