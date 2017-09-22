@@ -1,72 +1,6 @@
-{% extends 'mairimed/base.html' %}
-
-{% block sidebar %}
-<div class="barra-lateral">
-  <h1>Tópicos</h1>
-  <ul>
-    {% if artigo.introducao %}
-    <li><h2><a href="#intoducao">INTRODUÇÃO</a></h2></li>
-    {% endif %}
-    {% if artigo.epidemiologia %}
-    <li><h2><a href="#epidemiologia">EPIDEMIOLOGIA</a></h2></li>
-    {% endif %}
-    {% if artigo.classificacao %}
-    <li><h2><a href="#classificacao">CLASSIFICAÇÃO</a></h2></li>
-    {% endif %}
-
-    <li><h2><a href="#etiologia_fisiopatologia">ETIOLOGIA E FISIOPATOLOGIA</a></h2></li>
-
-    <li><h2><a href="#diagnostico">DIAGNÓSTICO</a></h2></li>
-    {% if artigo.historia_clinica %}
-    <li><h3><a href="#historia_clinica">HISTÓRIA CLÍNICA</a></h3></li>
-    {% endif %}
-    {% if artigo.exame_fisico %}
-    <li><h3><a href="#exame_fisico">EXAME FÍSICO</a></h3></li>
-    {% endif %}
-
-    <li><h3><a href="#exames_complementares">EXAMES COMPLEMENTARES</a></h3></li>
-
-    {% if artigo.criterios_diagnosticos %}
-    <li><h3><a href="#criterios_diagnosticos">CRITÉRIOS DIAGNÓSTICOS</a></h3></li>
-    {% endif %}
-    {% if artigo.diagnostico_diferencial %}
-    <li><h3><a href="#diagnostico_diferencial">DIAGNÓSTICO DIFERENCIAL</a></h3></li>
-    {% endif %}
-
-    {% if artigo.top1 %}
-    <li><h3><a href="#top1">{{ artigo.top1|linebreaksbr }}</a></h3></li>
-    {% endif %}
-
-    <li><h2><a href="#tratamento_e_manejo">TRATAMENTO E MANEJO</a></h2></li>
-    {% if artigo.tratamento_nao_medicamentoso %}
-    <li><h3><a href="#tratamento_nao_medicamentoso">MEDIDAS GERAIS</a></h3></li>
-    {% endif %}
-    {% if artigo.tratamento_medicamentoso %}
-    <li><h3><a href="#tratamento_medicamentoso">TRATAMENTO FARMACOLÓGICO</a></h3></li>
-    {% endif %}
-    {% if artigo.tratamento_intervencionista %}
-    <li><h3><a href="#tratamento_intervencionista">TRATAMENTO INTERVENCIONISTA</a></h3></li>
-    {% endif %}
-    {% if artigo.profilaxia %}
-    <li><h2><a href="#profilaxia">PROFILAXIA</a></h2></li>
-    {% endif %}
-    {% if artigo.prognostico %}
-    <li><h2><a href="#prognostico">PROGNÓSTICO</a></h2></li>
-    {% endif %}
-    {% if artigo.complicacoes %}
-    <li><h2><a href="#complicacoes">COMPLICAÇÕES</a></h2></li>
-    {% endif %}
-    {% if artigo.algoritmo_img1 %}
-    <li><h2><a href="#algoritmo_img1">ALGORITMO</a></h2></li>
-    {% endif %}
-
-  </ul>
-</div>
-{% endblock %}
+{% extends 'mairimed/artigos_base.html' %}
 
 {% block content %}
-    <div class="artigo">
-
         <h1>{{ artigo.titulo }}</h1>
 
         {% if artigo.introducao %}
@@ -328,6 +262,68 @@
             </div>
           {% endif %}
         -->
+{% endblock %}
 
-    </div>
+
+{% block sidebar %}
+<nav class="col-sm-2">
+  <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="220" style='padding-bottom:20px; padding-top:0px;'>
+    <li><h1>Tópicos</h1></li>
+    {% if artigo.introducao %}
+    <li><a href="#introducao">INTRODUÇÃO</a></li>
+    {% endif %}
+    {% if artigo.epidemiologia %}
+    <li><a href="#epidemiologia">EPIDEMIOLOGIA</a></li>
+    {% endif %}
+    {% if artigo.classificacao %}
+    <li><a href="#classificacao">CLASSIFICAÇÃO</a></li>
+    {% endif %}
+
+    <li><a href="#etiologia_fisiopatologia">ETIOLOGIA E FISIOPATOLOGIA</a></li>
+
+    <li><a href="#diagnostico">DIAGNÓSTICO</a></li>
+    {% if artigo.historia_clinica %}
+    <li><a href="#historia_clinica">HISTÓRIA CLÍNICA</a></li>
+    {% endif %}
+    {% if artigo.exame_fisico %}
+    <li><a href="#exame_fisico">EXAME FÍSICO</a></li>
+    {% endif %}
+
+    <li><a href="#exames_complementares">EXAMES COMPLEMENTARES</a></li>
+
+    {% if artigo.criterios_diagnosticos %}
+    <li><a href="#criterios_diagnosticos">CRITÉRIOS DIAGNÓSTICOS</a></li>
+    {% endif %}
+    {% if artigo.diagnostico_diferencial %}
+    <li><a href="#diagnostico_diferencial">DIAGNÓSTICO DIFERENCIAL</a></li>
+    {% endif %}
+
+    {% if artigo.top1 %}
+    <li><a href="#top1">{{ artigo.top1|linebreaksbr }}</a></li>
+    {% endif %}
+
+    <li><a href="#tratamento_e_manejo">TRATAMENTO E MANEJO</a></li>
+    {% if artigo.tratamento_nao_medicamentoso %}
+    <li><a href="#tratamento_nao_medicamentoso">MEDIDAS GERAIS</a></li>
+    {% endif %}
+    {% if artigo.tratamento_medicamentoso %}
+    <li><a href="#tratamento_medicamentoso">TRATAMENTO FARMACOLÓGICO</a></li>
+    {% endif %}
+    {% if artigo.tratamento_intervencionista %}
+    <li><a href="#tratamento_intervencionista">TRATAMENTO INTERVENCIONISTA</a></li>
+    {% endif %}
+    {% if artigo.profilaxia %}
+    <li><a href="#profilaxia">PROFILAXIA</a></li>
+    {% endif %}
+    {% if artigo.prognostico %}
+    <li><a href="#prognostico">PROGNÓSTICO</a></li>
+    {% endif %}
+    {% if artigo.complicacoes %}
+    <li><a href="#complicacoes">COMPLICAÇÕES</a></li>
+    {% endif %}
+    {% if artigo.algoritmo_img1 %}
+    <li><a href="#algoritmo_img1">ALGORITMO</a></li>
+    {% endif %}
+  </ul>
+</nav>
 {% endblock %}

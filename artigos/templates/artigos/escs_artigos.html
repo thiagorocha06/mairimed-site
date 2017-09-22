@@ -1,0 +1,103 @@
+{% extends 'mairimed/artigos_base.html' %}
+
+{% block content %}
+
+<div class="artigo">
+
+  {% url 'M401' as M401 %}
+  {% url 'M402' as M402 %}
+  {% url 'M403' as M403 %}
+  {% url 'M404' as M404 %}
+  {% url 'M406' as M406 %}
+  {% url 'M407' as M407 %}
+
+
+  {% if request.path == M401 %}
+    <h1>M401 - TRANSTORNOS MENTAIS E DE COMPORTAMENTO</h1>
+    <ul>
+    {% for artigo in artigos %}
+      {% if artigo.modulo == "M401" %}
+          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if request.path == M402 %}
+    <h1>M402 - DISTÚRBIOS SENSORIAIS, MOTORES E DA CONSCIÊNCIA</h1>
+    <ul>
+    {% for artigo in artigos %}
+      {% if artigo.modulo == "M402" %}
+          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if request.path == M403 %}
+    <h1>M403 - DISPNÉIA, DOR TORÁCICA E EDEMAS</h1>
+    <ul>
+    {% for artigo in artigos %}
+      {% if artigo.modulo == "M403" %}
+          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if request.path == M404 %}
+    <h1>M404 - TRANSTORNOS MENTAIS E DE COMPORTAMENTO</h1>
+    <ul>
+    {% for artigo in artigos %}
+      {% if artigo.modulo == "M404" %}
+          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if request.path == M406 %}
+    <h1>M406 - MANIFESTAÇÕES EXTERNAS DAS DOENÇAS E IATROGENIAS</h1>
+    <ul>
+    {% for artigo in artigos %}
+      {% if artigo.modulo == "M406" %}
+          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if request.path == M407 %}
+    <h1>M407 - EMERGÊNCIAS</h1>
+    <ul>
+    {% for artigo in artigos %}
+      {% if artigo.modulo == "M407" %}
+          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+</div>
+
+{% endblock content %}
+
+{% block sidebar %}
+<nav class="col-sm-2" style="padding-bottom:20px">
+  <ul class="nav nav-pills nav-stacked">
+    <li><h1>ESCS</h1></li>
+    <li><a href="{% url '1_serie' %}">1ª Série</a></li>
+    <li><a href="{% url '2_serie' %}">2ª Série</a></li>
+    <li><a href="{% url '3_serie' %}">3ª Série</a></li>
+    <li><a href="{% url '4_serie' %}">4ª Série</a></li>
+
+    <li><h1>Especialidades</h1></li>
+    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
+    <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
+    <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
+    <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
+    <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
+    <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
+  </ul>
+</nav>
+{% endblock %}

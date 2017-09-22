@@ -1,67 +1,62 @@
 {% load staticfiles %}
 
 <html>
-    <head>
-      <title>Mairimed</title>
-      <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link rel="stylesheet" href="{% static 'css/artigos.css' %}">
-    </head>
-    <body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mairimed</title>
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/artigos.css' %}">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Custom styles for this template
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+    -->
 
-      <!-- HEADER -->
-      <div class="page-header">
+    <!-- Affix -->
 
-        <!-- MENU SUPERIOR
-        <nav id="menu-superior" class="menu-superior">
-          <ul>
-              {% if user.is_authenticated %}
-                <li>Olá {{ user.username }}
-                  <small>(<a href="{% url 'logout'%}">Sair,</a>
-                  <a href="/perfil">Perfil</a>)</small>
-                </li>
-              {%	else	%}
-                <li><a href="/cadastro">Cadastrar-se</a></li>
-                <li><a href="{%	url	'login'	%}">Entrar</a></li>
-              {% endif %}
+    <style>
+      .affix {
+          top: 10px;
+      }
+      @media screen and (max-width: 810px) {
+        .col-sm-9  {
+            margin-left: 150px;
+        }
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- LOGO -->
+    <div class="container-fluid" style="background-color:#ff9400; color:#fff; height:130px; text-align:center;">
+      <h1><a href="/"><img src="{% static 'img/mairimed_logo4.png' %}" /></a></h1>
+    </div>
+
+    <div class="container-fluid" style="background-color:#ff9400">
+      <div class="container">
+        <nav>
+          <ul class="nav nav-justified">
+            <li><a href="{% url 'inicio' %}">Resumos Médicos</a></li>
+            <li class="active"><a href="{% url 'lista_termos' %}">Dicionário Médico</a></h2></li>
+            <li><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></h2></li>
           </ul>
         </nav>
-        -->
-
-        <h1><a href="/"><img src="{% static 'img/mairimed_logo4.png' %}" /></a></h1>
-
-        <div class='menu'>
-        <!-- BARRA DE NAVEGACAO -->
-          <nav>
-            <ul>
-  <!--
-              {% url 'inicio' as inicio %}
-              {% url 'categorias_artigos' as categorias_artigos %}
-              {% url 'lista_farmacos' as lista_farmacos %}
-              {% url 'lista_termos' as lista_termos %}
-              {% url 'exercicios_categorias' as exercicios_categorias %}
-              <li {% if request.path == inicio %} class="active" {% endif %}><h2><a href="{% url 'inicio' %}">Resumos de Medicina</a></h2></li>
-  -->
-              <li><h2><a href="{% url 'inicio' %}">Resumos de Medicina </a></h2></li>
-            <!--
-              <li {% if request.path == lista_farmacos %} class="active" {% endif %}><h2><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></h2></li>
-              <li {% if request.path == lista_termos %} class="active" {% endif %}><h2><a href="{% url 'lista_termos' %}">Termos Médicos</a></h2></li>
-            -->
-              <li class="active"><h2><a href="{% url 'lista_termos' %}">Dicionário Médico</a></h2></li>
-              <li><h2><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></h2></li>
-            </ul>
-          </nav>
-        </div>
-
       </div>
+    </div>
 
       <!-- CONTEUDO -->
-      <div class="content container">
+      <div class="container">
         <div class="row">
           <!-- BARRA LATERAL -->
-          <div id="sidebar" class="col-md-3">
+          <div id="sidebar" class="col-md-2">
             {% block sidebar %}
             {% endblock %}
           </div>

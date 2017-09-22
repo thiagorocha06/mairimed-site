@@ -44,43 +44,37 @@
       <div class="container">
         <nav>
           <ul class="nav nav-justified">
-            <li><a href="{% url 'inicio' %}">Resumos Médicos</a></li>
+            <li class="active"><a href="{% url 'inicio' %}">Resumos Médicos</a></li>
             <li><a href="{% url 'lista_termos' %}">Dicionário Médico</a></h2></li>
-            <li class="active"><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></h2></li>
+            <li><a href="{% url 'lista_farmacos' %}">Dicionário Farmacêutico</a></h2></li>
           </ul>
         </nav>
       </div>
     </div>
 
-      <!-- CONTEUDO -->
-      <div class="container">
-        <div class="row">
-          <!-- BARRA LATERAL -->
-            {% block sidebar %}
-            {% endblock %}
-          <!-- COLUNA PRINCIPAL -->
-          <div class="col-md-8">
-            <div class="farmaco-card">
-              {% block card %}
-              {% endblock %}
-            </div>
-
-            <div class="artigo">
-              {% block content %}
-              {% endblock %}
-            </div>
-          </div>
+  <div class="container">
+    <div class="row">
+      <!-- BARRA LATERAL -->
+          {% block sidebar %}
+          {% endblock %}
+      <!-- COLUNA PRINCIPAL -->
+      <div class="col-md-8">
+        <div class="artigo">
+          {% block content %}
+          {% endblock %}
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- BARRA INFERIOR -->
-      <footer>
-        <div class="final-pag">
-          <p>mairimed.com</p>
-          <p><a href="{% url 'termos_uso' %}">Termos de uso</a></p>
-          <p><a href="{% url 'sobre' %}">Sobre mairimed.com</a></p>
-        </div>
-      </footer>
+    <!-- BARRA INFERIOR -->
+    <footer>
+      <div class="final-pag">
+        <p>mairimed.com</p>
+        <p><a href="{% url 'termos_uso' %}">Termos de uso</a></p>
+        <p><a href="{% url 'sobre' %}">Sobre mairimed.com</a></p>
+      </div>
+    </footer>
 
-    </body>
+  </body>
 </html>

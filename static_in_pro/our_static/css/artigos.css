@@ -1,4 +1,3 @@
-
 /* CABECALHO */
 
 .page-header {
@@ -70,7 +69,7 @@
 }
 
 .active {
-    border-bottom:3px solid #EDEDED;
+    border-bottom:3px solid #ff9400;
 }
 
 /* LINHA ALFABETICA */
@@ -240,4 +239,97 @@
     display: inline-block;
     font-size: 10pt;
     color: #878787;
+}
+
+/* BARRA PRINCIPAL */
+
+.nav-justified > li > a:hover,
+.nav-justified > li > a:focus {
+    background-color: #ff9400;
+    border-bottom: 5px solid #fff;
+    color: #fff; /*Cor do texto em foco*/
+}
+
+.nav-justified > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 13pt;
+  background-color: #ff9400; /* Old browsers */
+}
+
+.nav-justified > .active > a,
+.nav-justified > .active > a:hover,
+.nav-justified > .active > a:focus {
+  /*background-color: #ddd; Cor do fundo ativo*/
+  color: #fff; /*Cor do texto ativo*/
+  border-bottom: 5px solid #fff;
+}
+
+/* BARRA LATERAL */
+
+.nav-pills > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 7pt;
+  background-color: #ff9400; /* Old browsers */
+}
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  /*background-color: #ddd; Cor do fundo ativo*/
+  color: #fff; /*Cor do texto ativo*/
+  background-color: #ff9400;
+}
+
+.nav-pills > li > a:hover,
+.nav-pills > li > a:focus {
+    background-color: #fff;
+    color: #ff9400; /*Cor do texto em foco*/
+}
+
+.nav-pills h1{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 8pt;
+  background-color: #d45500; /* Old browsers */
+}
+
+.nav-pills h2 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 8pt;
+  background-color: #ff6600; /* Old browsers */
+}
+
+.nav-pills h3 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 8pt;
+  background-color: #ff7f2a; /* Old browsers */
 }

@@ -44,6 +44,18 @@ def termos_uso(request):
 def sobre(request):
     return render(request, 'mairimed/sobre.html')
 
+def bootstrap(request, pk):
+    artigo = get_object_or_404(Artigo, pk=pk)
+    return render(request, 'mairimed/bootstrap.html', {'artigo': artigo})
+
+def categorias_artigos(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/categorias_artigos.html', {'artigos' : artigos})
+
+def escs_artigos(request):
+    artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'artigos/escs_artigos.html', {'artigos' : artigos})
+
 ### ARTIGOS ###
 
 def infectologia_artigos(request):
@@ -119,50 +131,3 @@ def M406(request):
 def M407(request):
     artigos = Artigo.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
     return render(request, 'artigos/ESCS/M407.html', {'artigos' : artigos})
-
-### Deletar daqui para baixo ###
-
-
-@login_required
-def novo_artigo(request):
-    if request.method == "POST":
-        form = ArtigoForm(request.POST)
-        if form.is_valid():
-            artigo = form.save(commit=False)
-            artigo.author = request.user
-            artigo.save()
-            return redirect('detalhe_artigo', pk=artigo.pk)
-    else:
-        form = ArtigoForm()
-    return render(request, 'artigos/edicao_artigo.html', {'form': form})
-
-@login_required
-def edicao_artigo(request, pk):
-    artigo = get_object_or_404(Post, pk=pk)
-    if request.method == "POST":
-        form = ArtigoForm(request.POST, instance=post)
-        if form.is_valid():
-            artigo = form.save(commit=False)
-            artigo.author = request.user
-            artigo.save()
-            return redirect('detalhe_artigo', pk=artigo.pk)
-    else:
-        form = ArtigoForm(instance=post)
-    return render(request, 'artigos/edicao_artigo.html', {'form': form})
-
-@login_required
-def lista_rascunhos(request):
-	artigos = Artigo.objects.filter(data_de_publicacao__isnull=True).order_by('data_de_criacao')
-	return render(request, 'artigos/lista_rascunhos.html', {'artigos': artigos})
-
-@login_required
-def publicar_artigo(request, pk):
-	artigo = get_object_or_404(Artigo, pk=pk)
-	artigo.publicar()
-	return redirect('detalhe_artigo', pk=pk)
-
-@login_required
-def	remover_artigo(request,	pk):
-	artigo = get_object_or_404(Artigo, pk=pk)
-	artigo.delete()
-	return redirect('lista_artigos')

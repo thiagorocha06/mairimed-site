@@ -94,16 +94,16 @@
 {% endblock content %}
 
 {% block sidebar %}
-<div class="barra-lateral">
-  <h1>Classes</h1>
-  <ul>
-    <li><h2><a href="{% url 'aine_farmacos' %}">AINE</a></h2></li>
-    <li><h2><a href="{% url 'antihipertensivos_farmacos' %}">Anti-hipertensivo</a></h2></li>
-    <li><h2><a href="{% url 'antiagregantes_farmacos' %}">Antiagregante Plaquetário</a></h2></li>
-    <li><h2><a href="{% url 'antianginosos_farmacos' %}">Antianginoso</a></h2></li>
-    <li><h2><a href="{% url 'antibioticos_farmacos' %}">Antibiótico</a></h2></li>
-    <li><h2><a href="{% url 'anticoagulantes_farmacos' %}">Anticoagulante</a></h2></li>
-    <li><h2><a href="{% url 'hipolipemiantes_farmacos' %}">Hipolipemiante</a></h2></li>
+<nav class="col-sm-2" style="padding-bottom:20px">
+  <ul class="nav nav-pills nav-stacked">
+    <h1>Classes</h1>
+    <li><a href="{% url 'aine_farmacos' %}">AINE</a></li>
+    <li><a href="{% url 'antihipertensivos_farmacos' %}">Anti-hipertensivo</a></li>
+    <li><a href="{% url 'antiagregantes_farmacos' %}">Antiagregante Plaquetário</a></li>
+    <li><a href="{% url 'antianginosos_farmacos' %}">Antianginoso</a></li>
+    <li><a href="{% url 'antibioticos_farmacos' %}">Antibiótico</a></li>
+    <li><a href="{% url 'anticoagulantes_farmacos' %}">Anticoagulante</a></li>
+    <li><a href="{% url 'hipolipemiantes_farmacos' %}">Hipolipemiante</a></li>
   </ul>
-</div>
+</nav>
 {% endblock %}
