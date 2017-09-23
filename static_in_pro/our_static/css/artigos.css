@@ -282,6 +282,7 @@
   font-family: 'Ubuntu', sans-serif;
   font-size: 7pt;
   background-color: #fff;
+  border-bottom: 1px solid #ff9400;
 }
 
 .nav-pills > .active > a,
