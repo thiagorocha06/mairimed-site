@@ -277,25 +277,25 @@
   padding-bottom: 10px;
   margin-bottom: 0;
   font-weight: bold;
-  color: #fff;
+  color: #ff9400;
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
   font-size: 7pt;
-  background-color: #ff9400; /* Old browsers */
+  background-color: #fff;
 }
 
 .nav-pills > .active > a,
 .nav-pills > .active > a:hover,
 .nav-pills > .active > a:focus {
   /*background-color: #ddd; Cor do fundo ativo*/
-  color: #fff; /*Cor do texto ativo*/
-  background-color: #ff9400;
+  color: #ff9400; /*Cor do texto ativo*/
+  background-color: #fff;
 }
 
 .nav-pills > li > a:hover,
 .nav-pills > li > a:focus {
-    background-color: #fff;
-    color: #ff9400; /*Cor do texto em foco*/
+    background-color: #ff9400;
+    color: #fff; /*Cor do texto em foco*/
 }
 
 .nav-pills h1{
