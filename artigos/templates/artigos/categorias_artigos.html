@@ -159,60 +159,12 @@
     <li><a href="{% url 'ha_4' %}">4ª SÉRIE<br>HABILIDADES E ATITUDES</a></li>
 
     <li><h1>Especialidades</h1></li>
-    {% if request.path == cardiologia_artigos %}
     <li class="active"><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
     <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
     <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
     <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
     <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
     <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
-    {% endif %}
-
-    {% if request.path == endocrinologia_artigos %}
-    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
-    <li class="active"><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
-    <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
-    <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
-    <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
-    <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
-    {% endif %}
-
-    {% if request.path == infectologia_artigos %}
-    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
-    <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
-    <li class="active"><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
-    <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
-    <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
-    <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
-    {% endif %}
-
-    {% if request.path == nefrologia_artigos %}
-    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
-    <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
-    <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
-    <li class="active"><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
-    <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
-    <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
-    {% endif %}
-
-    {% if request.path == pediatria_artigos %}
-    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
-    <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
-    <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
-    <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
-    <li class="active"><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
-    <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
-    {% endif %}
-
-    {% if request.path == pneumologia_artigos %}
-    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
-    <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
-    <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
-    <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
-    <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
-    <li class="active"><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
-    {% endif %}
-
   </ul>
 </nav>
 {% endblock %}
