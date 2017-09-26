@@ -297,6 +297,14 @@
 .nav-pills > li > a:focus {
     background-color: #ff9400;
     color: #fff; /*Cor do texto em foco*/
+    text-decoration: none;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #ff9400;
 }
 
 .nav-pills h1{

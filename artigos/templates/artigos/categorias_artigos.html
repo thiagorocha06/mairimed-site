@@ -2,16 +2,21 @@
 
 {% block content %}
 
+<!-- Especialidades -->
   {% url 'infectologia_artigos' as infectologia_artigos %}
   {% url 'cardiologia_artigos' as cardiologia_artigos %}
   {% url 'endocrinologia_artigos' as endocrinologia_artigos %}
   {% url 'nefrologia_artigos' as nefrologia_artigos %}
   {% url 'pediatria_artigos' as pediatria_artigos %}
   {% url 'pneumologia_artigos' as pneumologia_artigos %}
-  {% url '1_serie' as 1_serie %}
-  {% url '2_serie' as 2_serie %}
+
+<!-- ESCS -->
+  {% url 'ha_3' as ha_3 %}
+  {% url 'ha_4' as ha_4 %}
   {% url '3_serie' as 3_serie %}
   {% url '4_serie' as 4_serie %}
+
+<!-- Especialidades -->
 
   {% if request.path == infectologia_artigos %}
   <h1>INFECTOLOGIA</h1>
@@ -58,41 +63,53 @@
   {% endif %}
 
   {% if request.path == pediatria_artigos %}
-  <h1>PEDIATRIA</h1>
-  <ul>
-  {% for artigo in artigos %}
-    {% if artigo.categoria == "Pediatria" %}
-        <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
-    {% endif %}
-  {% endfor %}
-  </ul>
+    <h1>PEDIATRIA</h1>
+    <ul>
+    {% for artigo in artigos %}
+      {% if artigo.categoria == "Pediatria" %}
+          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
   {% endif %}
 
   {% if request.path == pneumologia_artigos %}
-  <h1>PNEUMOLOGIA</h1>
+    <h1>PNEUMOLOGIA</h1>
+    <ul>
+    {% for artigo in artigos %}
+      {% if artigo.categoria == "Pneumologia" %}
+          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+<!-- ESCS -->
+
+  {% if request.path == 3_serie %}
+    <h1>3ª Série - MÓDULOS TEMÁTICOS</h1>
+    <ul>
+      <li><h2><a href="{% url 'M301' %}">M301 - DOR</a></h2></li>
+      <li><h2><a href="{% url 'M302' %}">M302 - DOR ABDOMINAL, DIARRÉIA, VÔMITOS E ICTERÍCIA</a></h2></li>
+      <li><h2><a href="{% url 'M303' %}">M303 - FEBRE, INFLAMAÇÃO E INFECÇÃO</a></h2></li>
+      <li><h2><a href="{% url 'M304' %}">M304 - DOENÇAS RESULTANTES DA AGRESSÃO AO MEIO AMBIENTE</a></h2></li>
+      <li><h2><a href="{% url 'M306' %}">M306 - PERDA DE SANGUE</a></h2></li>
+      <li><h2><a href="{% url 'M307' %}">M307 - FADIGA, PERDA DE PESO E ANEMIAS</a></h2></li>
+    </ul>
+  {% endif %}
+
+  {% if request.path == ha_3 %}
+  <h1>3ª Série - HABILIDADES E ATITUDES</h1>
   <ul>
-  {% for artigo in artigos %}
-    {% if artigo.categoria == "Pneumologia" %}
-        <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
-    {% endif %}
-  {% endfor %}
+    <li><h2><a href="{% url 'ha_ped' %}">PEDIATRIA</a></h2></li>
+    <li><h2><a href="{% url 'ha_abdome' %}">CLÍNICA DO ABDOME</a></h2></li>
+    <li><h2><a href="{% url 'ha_cm' %}">CLÍNICA MÉDICA</a></h2></li>
+    <li><h2><a href="{% url 'ha_neurolocom' %}">APARELHO NEUROLOCOMOTOR</a></h2></li>
   </ul>
   {% endif %}
 
-  {% if request.path == 1_serie %}
-  <h1>1ª Série</h1>
-  {% endif %}
-
-  {% if request.path == 2_serie %}
-  <h1>2ª Série</h1>
-  {% endif %}
-
-  {% if request.path == 3_serie %}
-  <h1>3ª Série</h1>
-  {% endif %}
-
   {% if request.path == 4_serie %}
-  <h1>4ª Série</h1>
+  <h1>4ª Série - MÓDULOS TEMÁTICOS</h1>
   <ul>
     <li><h2><a href="{% url 'M401' %}">M401 - TRANSTORNOS MENTAIS E DE COMPORTAMENTO</a></h2></li>
     <li><h2><a href="{% url 'M402' %}">M402 - DISTÚRBIOS SENSORIAIS, MOTORES E DA CONSCIÊNCIA</a></h2></li>
@@ -103,24 +120,99 @@
   </ul>
   {% endif %}
 
+  {% if request.path == ha_4 %}
+  <h1>4ª Série - HABILIDADES E ATITUDES</h1>
+  <ul>
+    <li><h2><a href="{% url 'ha_ped_emerg' %}">PEDIATRIA EMERGÊNCIA</a></h2></li>
+    <li><h2><a href="{% url 'ha_ped_amb' %}">PEDIATRIA AMBULATORIAL</a></h2></li>
+    <li><h2><a href="{% url 'ha_cm_emerg' %}">CLÍNICA MÉDICA EMERGÊNCIA</a></h2></li>
+    <li><h2><a href="{% url 'ha_cm_amb' %}">CLÍNICA MÉDICA AMBULATORIAL</a></h2></li>
+    <li><h2><a href="{% url 'ha_cirurgia' %}">CIRURGIA</a></h2></li>
+    <li><h2><a href="{% url 'ha_go' %}">GINECOLOGIA OBSTETRÍCIA</a></h2></li>
+  </ul>
+  {% endif %}
+
 {% endblock content %}
 
 {% block sidebar %}
+
+<!-- Especialidades -->
+  {% url 'infectologia_artigos' as infectologia_artigos %}
+  {% url 'cardiologia_artigos' as cardiologia_artigos %}
+  {% url 'endocrinologia_artigos' as endocrinologia_artigos %}
+  {% url 'nefrologia_artigos' as nefrologia_artigos %}
+  {% url 'pediatria_artigos' as pediatria_artigos %}
+  {% url 'pneumologia_artigos' as pneumologia_artigos %}
+
+<!-- ESCS -->
+  {% url 'ha_3' as ha_3 %}
+  {% url 'ha_4' as ha_4 %}
+  {% url '3_serie' as 3_serie %}
+  {% url '4_serie' as 4_serie %}
+
 <nav class="col-sm-2" style="padding-bottom:20px">
   <ul class="nav nav-pills nav-stacked">
     <li><h1>ESCS</h1></li>
-    <li><a href="{% url '1_serie' %}">1ª Série</a></li>
-    <li><a href="{% url '2_serie' %}">2ª Série</a></li>
-    <li><a href="{% url '3_serie' %}">3ª Série</a></li>
-    <li><a href="{% url '4_serie' %}">4ª Série</a></li>
+    <li><a href="{% url '3_serie' %}">3ª SÉRIE<br>MÓDULOS TEMÁTICOS</a></li>
+    <li><a href="{% url 'ha_3' %}">3ª SÉRIE<br>HABILIDADES E ATITUDES</a></li>
+    <li><a href="{% url '4_serie' %}">4ª SÉRIE<br>MÓDULOS TEMÁTICOS</a></li>
+    <li><a href="{% url 'ha_4' %}">4ª SÉRIE<br>HABILIDADES E ATITUDES</a></li>
 
     <li><h1>Especialidades</h1></li>
-    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
+    {% if request.path == cardiologia_artigos %}
+    <li class="active"><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
     <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
     <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
     <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
     <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
     <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
+    {% endif %}
+
+    {% if request.path == endocrinologia_artigos %}
+    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
+    <li class="active"><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
+    <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
+    <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
+    <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
+    <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
+    {% endif %}
+
+    {% if request.path == infectologia_artigos %}
+    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
+    <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
+    <li class="active"><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
+    <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
+    <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
+    <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
+    {% endif %}
+
+    {% if request.path == nefrologia_artigos %}
+    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
+    <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
+    <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
+    <li class="active"><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
+    <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
+    <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
+    {% endif %}
+
+    {% if request.path == pediatria_artigos %}
+    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
+    <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
+    <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
+    <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
+    <li class="active"><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
+    <li><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
+    {% endif %}
+
+    {% if request.path == pneumologia_artigos %}
+    <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
+    <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
+    <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
+    <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>
+    <li><a href="{% url 'pediatria_artigos' %}">PEDIATRIA</a></li>
+    <li class="active"><a href="{% url 'pneumologia_artigos' %}">PNEUMOLOGIA</a></li>
+    {% endif %}
+
   </ul>
 </nav>
 {% endblock %}
