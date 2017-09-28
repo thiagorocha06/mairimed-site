@@ -1,6 +1,8 @@
-{% extends 'mairimed/artigos_base.html' %}
+{% extends 'artigos_base.html' %}
 
 {% block content %}
+<div class="artigo">
+
         <h1>{{ artigo.titulo }}</h1>
 
         {% if artigo.introducao %}
@@ -9,7 +11,7 @@
         {% endif %}
 
         {% if artigo.intro_figura %}
-          <img src="{{ artigo.intro_figura.url }}" width="800" />
+          <img src="{{ artigo.intro_figura.url }}" width="700" />
         {% endif %}
 
         {% if artigo.epidemiologia %}
@@ -18,7 +20,7 @@
         {% endif %}
 
         {% if artigo.epidemio_figura %}
-          <img src="{{ artigo.epidemio_figura.url }}" width="800" />
+          <img src="{{ artigo.epidemio_figura.url }}" width="700" />
         {% endif %}
 
         {% if artigo.classificacao %}
@@ -27,7 +29,7 @@
         {% endif %}
 
         {% if artigo.clas_figura %}
-          <img src="{{ artigo.clas_figura.url }}" width="800" />
+          <img src="{{ artigo.clas_figura.url }}" width="700" />
         {% endif %}
 
         <!-- ETIOLOGIA E FISIOPATOLOGIA -->
@@ -68,11 +70,11 @@
         {% endif %}
 
         {% if artigo.etio_img1 %}
-          <img src="{{ artigo.etio_img1.url }}" width="800" />
+          <img src="{{ artigo.etio_img1.url }}" width="700" />
         {% endif %}
 
         {% if artigo.etio_img2 %}
-          <img src="{{ artigo.etio_img2.url }}" width="800" />
+          <img src="{{ artigo.etio_img2.url }}" width="700" />
         {% endif %}
 
         <!-- DIAGNOSTICO -->
@@ -88,7 +90,7 @@
         {% endif %}
 
         {% if artigo.historia_figura %}
-          <img src="{{ artigo.historia_figura.url }}" width="800" />
+          <img src="{{ artigo.historia_figura.url }}" width="700" />
         {% endif %}
 
         {% if artigo.exame_fisico %}
@@ -142,7 +144,7 @@
         {% endif %}
 
         {% if artigo.diag_figura %}
-          <img src="{{ artigo.diag_figura.url }}" width="800" />
+          <img src="{{ artigo.diag_figura.url }}" width="700" />
         {% endif %}
 
         <!-- TOPICO ACESSORIO -->
@@ -151,10 +153,10 @@
           <h2 id='top1'>{{ artigo.top1|linebreaksbr }}</h2>
           <p>{{ artigo.texto1|linebreaksbr }}</p>
           {% if artigo.top1_img1 %}
-            <img src="{{ artigo.top1_img1.url }}" width="800" />
+            <img src="{{ artigo.top1_img1.url }}" width="700" />
           {% endif %}
           {% if artigo.top1_img2 %}
-            <img src="{{ artigo.top1_img2.url }}" width="800" />
+            <img src="{{ artigo.top1_img2.url }}" width="700" />
           {% endif %}
         {% endif %}
 
@@ -211,7 +213,7 @@
         {% endif %}
 
         {% if artigo.trat_figura %}
-          <img src="{{ artigo.trat_figura.url }}" width="800" />
+          <img src="{{ artigo.trat_figura.url }}" width="700" />
         {% endif %}
 
         {% if artigo.profilaxia %}
@@ -220,7 +222,7 @@
         {% endif %}
 
         {% if artigo.prof_figura %}
-          <img src="{{ artigo.prof_figura.url }}" width="800" />
+          <img src="{{ artigo.prof_figura.url }}" width="700" />
         {% endif %}
 
         {% if artigo.prognostico %}
@@ -236,11 +238,11 @@
         {% if artigo.algoritmo_img1 %}
           <h2 id='algoritmo_img1'>{{ artigo.algoritmo_top }}</h2>
           {% if artigo.algoritmo_img1 %}
-            <img src="{{ artigo.algoritmo_img1.url }}" width="800" />
+            <img src="{{ artigo.algoritmo_img1.url }}" width="700" />
           {% endif %}
 
           {% if artigo.algoritmo_img2 %}
-            <img src="{{ artigo.algoritmo_img2.url }}" width="800" />
+            <img src="{{ artigo.algoritmo_img2.url }}" width="700" />
           {% endif %}
         {% endif %}
 
@@ -262,6 +264,7 @@
             </div>
           {% endif %}
         -->
+</div>
 {% endblock %}
 
 

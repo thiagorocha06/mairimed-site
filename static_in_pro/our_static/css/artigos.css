@@ -113,18 +113,34 @@
   float: right;
 }
 
+.texto-centro{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #d45500;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
 .texto-centro h1, .texto-centro h2, .texto-centro h3, .texto-centro h4 {
   font-family: 'Ubuntu', sans-serif;
   text-align: center;
   font-weight: bold;
-  color: #d45500;
+  color: white;
   font-size: 20pt;
 }
 
 /* ARTIGO */
 
 .artigo {
-  margin-bottom: 70px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
 
 .artigo h1, .artigo h1 a, .artigo h1 a:visited {

@@ -1,7 +1,9 @@
 {% extends 'farmacos_base.html' %}
 
-<!-- CARD DO FARMACO -->
-{% block card %}
+<!-- CONTEUDO -->
+{% block content %}
+<div class="artigo">
+
   <h1>{{ farmaco.nome }}</h1>
 
   <div class="linhas-horizontais">
@@ -21,10 +23,7 @@
       {% endif %}
     </div>
   </div>
-{% endblock %}
 
-<!-- CONTEUDO -->
-{% block content %}
     {% if farmaco.farmacodinamica %}
     <h2 id="farmacodinamica">Farmacodinamica</h2>
     <p>{{ farmaco.farmacodinamica|linebreaksbr }}</p>
@@ -104,6 +103,7 @@
     <h2 id="rnaodefinida">Reações adversas com frequência não definida</h2>
     <p>{{ farmaco.rnaodefinida|linebreaksbr }}</p>
     {% endif %}
+</div>
 {% endblock %}
 
 {% block sidebar %}

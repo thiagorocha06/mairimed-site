@@ -18,7 +18,7 @@ def inicio(request):
         lista_artigos = lista_artigos.filter(titulo__icontains=termo_pesquisa)
 
     #Paginacao
-    paginator = Paginator(lista_artigos, 5) # Show 5 contacts per page
+    paginator = Paginator(lista_artigos, 10) # Show 5 contacts per page
     page_request_var = "pagina"
     page = request.GET.get(page_request_var)
     try:

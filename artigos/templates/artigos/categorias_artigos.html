@@ -1,7 +1,6 @@
-{% extends 'mairimed/artigos_base.html' %}
+{% extends 'artigos_base.html' %}
 
 {% block content %}
-
 <!-- Especialidades -->
   {% url 'infectologia_artigos' as infectologia_artigos %}
   {% url 'cardiologia_artigos' as cardiologia_artigos %}
@@ -19,117 +18,143 @@
 <!-- Especialidades -->
 
   {% if request.path == infectologia_artigos %}
-  <h1>INFECTOLOGIA</h1>
-  <ul>
-  {% for artigo in artigos %}
-    {% if artigo.categoria == "Infectologia" %}
-        <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
-    {% endif %}
-  {% endfor %}
-  </ul>
+    <div class="texto-centro">
+      <h1>INFECTOLOGIA</h1>
+    </div>
+    {% for artigo in artigos %}
+      {% if artigo.categoria == "Infectologia" %}
+        <div class="artigo">
+          <h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2>
+          <p>{{ artigo.introducao|truncatechars:200 }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
   {% endif %}
 
   {% if request.path == cardiologia_artigos %}
-  <h1>CARDIOLOGIA</h1>
-  <ul>
-  {% for artigo in artigos %}
-    {% if artigo.categoria == "Cardiologia" %}
-        <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
-    {% endif %}
-  {% endfor %}
-  </ul>
+    <div class="texto-centro">
+      <h1>CARDIOLOGIA</h1>
+    </div>
+    {% for artigo in artigos %}
+      {% if artigo.categoria == "Cardiologia" %}
+        <div class="artigo">
+          <h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2>
+          <p>{{ artigo.introducao|truncatechars:200 }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
   {% endif %}
 
   {% if request.path == endocrinologia_artigos %}
-  <h1>ENDOCRINOLOGIA</h1>
-  <ul>
-  {% for artigo in artigos %}
-    {% if artigo.categoria == "Endocrinologia" %}
-        <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
-    {% endif %}
-  {% endfor %}
-  </ul>
+    <div class="texto-centro">
+      <h1>ENDOCRINOLOGIA</h1>
+    </div>
+    {% for artigo in artigos %}
+      {% if artigo.categoria == "Endocrinologia" %}
+        <div class="artigo">
+          <h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2>
+          <p>{{ artigo.introducao|truncatechars:200 }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
   {% endif %}
 
   {% if request.path == nefrologia_artigos %}
-  <h1>NEFROLOGIA</h1>
-  <ul>
-  {% for artigo in artigos %}
-    {% if artigo.categoria == "Nefrologia" %}
-        <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
-    {% endif %}
-  {% endfor %}
-  </ul>
+    <div class="texto-centro">
+      <h1>NEFROLOGIA</h1>
+    </div>
+    {% for artigo in artigos %}
+      {% if artigo.categoria == "Nefrologia" %}
+        <div class="artigo">
+          <h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2>
+          <p>{{ artigo.introducao|truncatechars:200 }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
   {% endif %}
 
   {% if request.path == pediatria_artigos %}
-    <h1>PEDIATRIA</h1>
-    <ul>
+    <div class="texto-centro">
+      <h1>PEDIATRIA</h1>
+    </div>
     {% for artigo in artigos %}
       {% if artigo.categoria == "Pediatria" %}
-          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+        <div class="artigo">
+          <h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2>
+          <p>{{ artigo.introducao|truncatechars:200 }}</p>
+        </div>
       {% endif %}
     {% endfor %}
-    </ul>
   {% endif %}
 
   {% if request.path == pneumologia_artigos %}
-    <h1>PNEUMOLOGIA</h1>
-    <ul>
+    <div class="texto-centro">
+      <h1>PNEUMOLOGIA</h1>
+    </div>
     {% for artigo in artigos %}
       {% if artigo.categoria == "Pneumologia" %}
-          <li><h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2></li>
+        <div class="artigo">
+          <h2><a href="{% url 'detalhe_artigo' pk=artigo.pk %}">{{ artigo.titulo }}</a></h2>
+          <p>{{ artigo.introducao|truncatechars:200 }}</p>
+        </div>
       {% endif %}
     {% endfor %}
-    </ul>
   {% endif %}
 
 <!-- ESCS -->
 
   {% if request.path == 3_serie %}
-    <h1>3ª Série - MÓDULOS TEMÁTICOS</h1>
-    <ul>
-      <li><h2><a href="{% url 'M301' %}">M301 - DOR</a></h2></li>
-      <li><h2><a href="{% url 'M302' %}">M302 - DOR ABDOMINAL, DIARRÉIA, VÔMITOS E ICTERÍCIA</a></h2></li>
-      <li><h2><a href="{% url 'M303' %}">M303 - FEBRE, INFLAMAÇÃO E INFECÇÃO</a></h2></li>
-      <li><h2><a href="{% url 'M304' %}">M304 - DOENÇAS RESULTANTES DA AGRESSÃO AO MEIO AMBIENTE</a></h2></li>
-      <li><h2><a href="{% url 'M306' %}">M306 - PERDA DE SANGUE</a></h2></li>
-      <li><h2><a href="{% url 'M307' %}">M307 - FADIGA, PERDA DE PESO E ANEMIAS</a></h2></li>
-    </ul>
+    <div class="artigo">
+      <h1>3ª Série - MÓDULOS TEMÁTICOS</h1>
+      <ul>
+        <li><h2><a href="{% url 'M301' %}">M301 - DOR</a></h2></li>
+        <li><h2><a href="{% url 'M302' %}">M302 - DOR ABDOMINAL, DIARRÉIA, VÔMITOS E ICTERÍCIA</a></h2></li>
+        <li><h2><a href="{% url 'M303' %}">M303 - FEBRE, INFLAMAÇÃO E INFECÇÃO</a></h2></li>
+        <li><h2><a href="{% url 'M304' %}">M304 - DOENÇAS RESULTANTES DA AGRESSÃO AO MEIO AMBIENTE</a></h2></li>
+        <li><h2><a href="{% url 'M306' %}">M306 - PERDA DE SANGUE</a></h2></li>
+        <li><h2><a href="{% url 'M307' %}">M307 - FADIGA, PERDA DE PESO E ANEMIAS</a></h2></li>
+      </ul>
+    </div>
   {% endif %}
 
   {% if request.path == ha_3 %}
-  <h1>3ª Série - HABILIDADES E ATITUDES</h1>
-  <ul>
-    <li><h2><a href="{% url 'ha_ped' %}">PEDIATRIA</a></h2></li>
-    <li><h2><a href="{% url 'ha_abdome' %}">CLÍNICA DO ABDOME</a></h2></li>
-    <li><h2><a href="{% url 'ha_cm' %}">CLÍNICA MÉDICA</a></h2></li>
-    <li><h2><a href="{% url 'ha_neurolocom' %}">APARELHO NEUROLOCOMOTOR</a></h2></li>
-  </ul>
+    <div class="artigo">
+      <h1>3ª Série - HABILIDADES E ATITUDES</h1>
+      <ul>
+        <li><h2><a href="{% url 'ha_ped' %}">PEDIATRIA</a></h2></li>
+        <li><h2><a href="{% url 'ha_abdome' %}">CLÍNICA DO ABDOME</a></h2></li>
+        <li><h2><a href="{% url 'ha_cm' %}">CLÍNICA MÉDICA</a></h2></li>
+        <li><h2><a href="{% url 'ha_neurolocom' %}">APARELHO NEUROLOCOMOTOR</a></h2></li>
+      </ul>
+    </div>
   {% endif %}
 
   {% if request.path == 4_serie %}
-  <h1>4ª Série - MÓDULOS TEMÁTICOS</h1>
-  <ul>
-    <li><h2><a href="{% url 'M401' %}">M401 - TRANSTORNOS MENTAIS E DE COMPORTAMENTO</a></h2></li>
-    <li><h2><a href="{% url 'M402' %}">M402 - DISTÚRBIOS SENSORIAIS, MOTORES E DA CONSCIÊNCIA</a></h2></li>
-    <li><h2><a href="{% url 'M403' %}">M403 - DISPNÉIA, DOR TORÁCICA E EDEMAS</a></h2></li>
-    <li><h2><a href="{% url 'M404' %}">M404 - DESORDENS NUTRICIONAIS E METABÓLICAS</a></h2></li>
-    <li><h2><a href="{% url 'M406' %}">M406 - MANIFESTAÇÕES EXTERNAS DAS DOENÇAS E IATROGENIAS</a></h2></li>
-    <li><h2><a href="{% url 'M407' %}">M407 - EMERGÊNCIAS</a></h2></li>
-  </ul>
+    <div class="artigo">
+      <h1>4ª Série - MÓDULOS TEMÁTICOS</h1>
+      <ul>
+        <li><h2><a href="{% url 'M401' %}">M401 - TRANSTORNOS MENTAIS E DE COMPORTAMENTO</a></h2></li>
+        <li><h2><a href="{% url 'M402' %}">M402 - DISTÚRBIOS SENSORIAIS, MOTORES E DA CONSCIÊNCIA</a></h2></li>
+        <li><h2><a href="{% url 'M403' %}">M403 - DISPNÉIA, DOR TORÁCICA E EDEMAS</a></h2></li>
+        <li><h2><a href="{% url 'M404' %}">M404 - DESORDENS NUTRICIONAIS E METABÓLICAS</a></h2></li>
+        <li><h2><a href="{% url 'M406' %}">M406 - MANIFESTAÇÕES EXTERNAS DAS DOENÇAS E IATROGENIAS</a></h2></li>
+        <li><h2><a href="{% url 'M407' %}">M407 - EMERGÊNCIAS</a></h2></li>
+      </ul>
+    </div>
   {% endif %}
 
   {% if request.path == ha_4 %}
-  <h1>4ª Série - HABILIDADES E ATITUDES</h1>
-  <ul>
-    <li><h2><a href="{% url 'ha_ped_emerg' %}">PEDIATRIA EMERGÊNCIA</a></h2></li>
-    <li><h2><a href="{% url 'ha_ped_amb' %}">PEDIATRIA AMBULATORIAL</a></h2></li>
-    <li><h2><a href="{% url 'ha_cm_emerg' %}">CLÍNICA MÉDICA EMERGÊNCIA</a></h2></li>
-    <li><h2><a href="{% url 'ha_cm_amb' %}">CLÍNICA MÉDICA AMBULATORIAL</a></h2></li>
-    <li><h2><a href="{% url 'ha_cirurgia' %}">CIRURGIA</a></h2></li>
-    <li><h2><a href="{% url 'ha_go' %}">GINECOLOGIA OBSTETRÍCIA</a></h2></li>
-  </ul>
+    <div class="artigo">
+      <h1>4ª Série - HABILIDADES E ATITUDES</h1>
+      <ul>
+        <li><h2><a href="{% url 'ha_ped_emerg' %}">PEDIATRIA EMERGÊNCIA</a></h2></li>
+        <li><h2><a href="{% url 'ha_ped_amb' %}">PEDIATRIA AMBULATORIAL</a></h2></li>
+        <li><h2><a href="{% url 'ha_cm_emerg' %}">CLÍNICA MÉDICA EMERGÊNCIA</a></h2></li>
+        <li><h2><a href="{% url 'ha_cm_amb' %}">CLÍNICA MÉDICA AMBULATORIAL</a></h2></li>
+        <li><h2><a href="{% url 'ha_cirurgia' %}">CIRURGIA</a></h2></li>
+        <li><h2><a href="{% url 'ha_go' %}">GINECOLOGIA OBSTETRÍCIA</a></h2></li>
+      </ul>
+    </div>
   {% endif %}
 
 {% endblock content %}

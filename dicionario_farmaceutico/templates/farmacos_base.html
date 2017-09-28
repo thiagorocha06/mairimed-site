@@ -33,7 +33,7 @@
 
   </head>
 
-  <body>
+  <body style="background-color:#F5F0ED">
 
     <!-- LOGO -->
     <div class="container-fluid" style="background-color:#ff9400; color:#fff; height:130px; text-align:center;">
@@ -60,15 +60,8 @@
             {% endblock %}
           <!-- COLUNA PRINCIPAL -->
           <div class="col-md-8">
-            <div class="farmaco-card">
-              {% block card %}
-              {% endblock %}
-            </div>
-
-            <div class="artigo">
-              {% block content %}
-              {% endblock %}
-            </div>
+            {% block content %}
+            {% endblock %}
           </div>
         </div>
       </div>
