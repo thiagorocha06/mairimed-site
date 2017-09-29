@@ -156,27 +156,27 @@
           <p>{{ artigo.historia_clinica|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.historia_texto1 %}
-          <h4 id='historia_clinica'>{{ artigo.historia_top1 }}</h4>
+          <h4>{{ artigo.historia_top1 }}</h4>
           <p>{{ artigo.historia_texto1|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.historia_texto2 %}
-          <h4 id='historia_clinica'>{{ artigo.historia_top2 }}</h4>
+          <h4>{{ artigo.historia_top2 }}</h4>
           <p>{{ artigo.historia_texto2|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.historia_texto3 %}
-          <h4 id='historia_clinica'>{{ artigo.historia_top3 }}</h4>
+          <h4>{{ artigo.historia_top3 }}</h4>
           <p>{{ artigo.historia_texto3|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.historia_texto4 %}
-          <h4 id='historia_clinica'>{{ artigo.historia_top4 }}</h4>
+          <h4>{{ artigo.historia_top4 }}</h4>
           <p>{{ artigo.historia_texto4|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.historia_texto5 %}
-          <h4 id='historia_clinica'>{{ artigo.historia_top5 }}</h4>
+          <h4>{{ artigo.historia_top5 }}</h4>
           <p>{{ artigo.historia_texto5|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.historia_texto6 %}
-          <h4 id='historia_clinica'>{{ artigo.historia_top6 }}</h4>
+          <h4>{{ artigo.historia_top6 }}</h4>
           <p>{{ artigo.historia_texto6|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.historia_figura %}
@@ -189,27 +189,27 @@
           <p>{{ artigo.exame_fisico|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.ef_texto1 %}
-          <h4 id='exame_fisico'>{{ artigo.ef_top1 }}</h4>
+          <h4>{{ artigo.ef_top1 }}</h4>
           <p>{{ artigo.ef_texto1|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.ef_texto2 %}
-          <h4 id='exame_fisico'>{{ artigo.ef_top2 }}</h4>
+          <h4>{{ artigo.ef_top2 }}</h4>
           <p>{{ artigo.ef_texto2|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.ef_texto3 %}
-          <h4 id='exame_fisico'>{{ artigo.ef_top3 }}</h4>
+          <h4>{{ artigo.ef_top3 }}</h4>
           <p>{{ artigo.ef_texto3|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.ef_texto4 %}
-          <h4 id='exame_fisico'>{{ artigo.ef_top4 }}</h4>
+          <h4>{{ artigo.ef_top4 }}</h4>
           <p>{{ artigo.ef_texto4|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.ef_texto5 %}
-          <h4 id='exame_fisico'>{{ artigo.ef_top5 }}</h4>
+          <h4>{{ artigo.ef_top5 }}</h4>
           <p>{{ artigo.ef_texto5|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.ef_texto6 %}
-          <h4 id='exame_fisico'>{{ artigo.ef_top6 }}</h4>
+          <h4>{{ artigo.ef_top6 }}</h4>
           <p>{{ artigo.ef_texto6|linebreaksbr }}</p>
         {% endif %}
 
@@ -245,7 +245,7 @@
 
         <!-- CRITERIOS DIAGNOSTICOS -->
         {% if artigo.criterios_diagnosticos %}
-          <h3 id='criterios_diagnosticos'>{{ criterios_top }}</h3>
+          <h3 id='criterios_diagnosticos'>{{ artigo.criterios_top }}</h3>
           <p>{{ artigo.criterios_diagnosticos|linebreaksbr }}</p>
         {% endif %}
 
@@ -285,11 +285,11 @@
           <p>{{ artigo.tratamento_e_manejo|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.tratamento_nao_medicamentoso %}
-          <h3 id='tratamento_nao_medicamentoso'>{{ artigo.medidas_top }}</h3>
+          <h3>{{ artigo.medidas_top }}</h3>
           <p>{{ artigo.tratamento_nao_medicamentoso|linebreaksbr }}</p>
         {% endif %}
 
-        <h3 id='tratamento_medicamentoso'>{{ artigo.trat_med_top }}</h3>
+        <h3>{{ artigo.trat_med_top }}</h3>
         {% if artigo.tratamento_medicamentoso %}
           <p>{{ artigo.tratamento_medicamentoso|linebreaksbr }}</p>
         {% endif %}
@@ -319,7 +319,7 @@
         {% endif %}
 
         {% if artigo.tratamento_intervencionista %}
-          <h3 id='tratamento_intervencionista'>{{ artigo.trat_int_top }}</h3>
+          <h3>{{ artigo.trat_int_top }}</h3>
           <p>{{ artigo.tratamento_intervencionista|linebreaksbr }}</p>
         {% endif %}
 
@@ -397,48 +397,49 @@
   <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="220" style='padding-bottom:20px; padding-top:0px;'>
     <li><h1>Tópicos</h1></li>
     {% if artigo.introducao %}
-    <li><a href="#introducao">INTRODUÇÃO</a></li>
+    <li><a href="#introducao">{{ artigo.intro_top }}</a></li>
     {% endif %}
     {% if artigo.epidemiologia %}
-    <li><a href="#epidemiologia">EPIDEMIOLOGIA</a></li>
+    <li><a href="#epidemiologia">{{ artigo.epidemio_top }}</a></li>
     {% endif %}
     {% if artigo.classificacao %}
-    <li><a href="#classificacao">CLASSIFICAÇÃO</a></li>
+    <li><a href="#classificacao">{{ artigo.class_top }}</a></li>
     {% endif %}
 
-    <li><a href="#etiologia_fisiopatologia">ETIOLOGIA E FISIOPATOLOGIA</a></li>
+    {% if artigo.etio_top %}
+    <li><a href="#etiologia_fisiopatologia">{{ artigo.etio_top }}</a></li>
+    {% endif %}
 
-    <li><a href="#diagnostico">DIAGNÓSTICO</a></li>
+    {% if artigo.diag_top %}
+    <li><a href="#diagnostico">{{ artigo.diag_top }}</a></li>
+    {% endif %}
+
     {% if artigo.historia_clinica %}
-    <li><a href="#historia_clinica">HISTÓRIA CLÍNICA</a></li>
+    <li><a href="#historia_clinica">{{ artigo.historia_top }}</a></li>
     {% endif %}
     {% if artigo.exame_fisico %}
-    <li><a href="#exame_fisico">EXAME FÍSICO</a></li>
+    <li><a href="#exame_fisico">{{ artigo.ef_top }}</a></li>
     {% endif %}
 
-    <li><a href="#exames_complementares">EXAMES COMPLEMENTARES</a></li>
+    {% if artigo.exames_top %}
+    <li><a href="#exames_complementares">{{ artigo.exames_top }}</a></li>
+    {% endif %}
 
     {% if artigo.criterios_diagnosticos %}
-    <li><a href="#criterios_diagnosticos">CRITÉRIOS DIAGNÓSTICOS</a></li>
+    <li><a href="#criterios_diagnosticos">{{ artigo.criterios_top }}</a></li>
     {% endif %}
     {% if artigo.diagnostico_diferencial %}
-    <li><a href="#diagnostico_diferencial">DIAGNÓSTICO DIFERENCIAL</a></li>
+    <li><a href="#diagnostico_diferencial">{{ artigo.dd_top }}</a></li>
     {% endif %}
 
     {% if artigo.top1 %}
     <li><a href="#top1">{{ artigo.top1|linebreaksbr }}</a></li>
     {% endif %}
 
-    <li><a href="#tratamento_e_manejo">TRATAMENTO E MANEJO</a></li>
-    {% if artigo.tratamento_nao_medicamentoso %}
-    <li><a href="#tratamento_nao_medicamentoso">MEDIDAS GERAIS</a></li>
+    {% if artigo.tratamento_top %}
+    <li><a href="#tratamento_e_manejo">{{ artigo.tratamento_top }}</a></li>
     {% endif %}
-    {% if artigo.tratamento_medicamentoso %}
-    <li><a href="#tratamento_medicamentoso">TRATAMENTO FARMACOLÓGICO</a></li>
-    {% endif %}
-    {% if artigo.tratamento_intervencionista %}
-    <li><a href="#tratamento_intervencionista">TRATAMENTO INTERVENCIONISTA</a></li>
-    {% endif %}
+
     {% if artigo.profilaxia %}
     <li><a href="#profilaxia">PROFILAXIA</a></li>
     {% endif %}
