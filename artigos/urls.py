@@ -14,6 +14,8 @@ urlpatterns = [
     url(r'^artigo/nefrologia/$', views.categorias_artigos, name='nefrologia_artigos'),
     url(r'^artigo/pediatria/$', views.categorias_artigos, name='pediatria_artigos'),
     url(r'^artigo/pneumologia/$', views.categorias_artigos, name='pneumologia_artigos'),
+    url(r'^artigo/cirurgia_geral/$', views.categorias_artigos, name='cirurgia_geral_artigos'),
+    url(r'^artigo/cirurgia_trauma/$', views.categorias_artigos, name='cirurgia_trauma_artigos'),
 
     url(r'^artigo/(?P<pk>\d+)/$', views.detalhe_artigo, name='detalhe_artigo'),
     url(r'^artigo/(?P<pk>\d+)/favoritos/$', views.favoritos_artigo, name='favoritos_artigo'),

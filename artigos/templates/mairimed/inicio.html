@@ -55,7 +55,7 @@
 {% endblock %}
 
 {% block sidebar %}
-<nav class="col-sm-2">
+<nav class="col-sm-2" style="padding-bottom:20px">
   <ul class="nav nav-pills nav-stacked">
     <li><h1>ESCS</h1></li>
     <li><a href="{% url '3_serie' %}">3ª SÉRIE<br>MÓDULOS TEMÁTICOS</a></li>
@@ -65,6 +65,8 @@
 
     <li><h1>Especialidades</h1></li>
     <li><a href="{% url 'cardiologia_artigos' %}">CARDIOLOGIA</a></li>
+    <li><a href="{% url 'cirurgia_trauma_artigos' %}">CIRURGIA DO TRAUMA</a></li>
+    <li><a href="{% url 'cirurgia_geral_artigos' %}">CIRURGIA GERAL</a></li>
     <li><a href="{% url 'endocrinologia_artigos' %}">ENDOCRINOLOGIA</a></li>
     <li><a href="{% url 'infectologia_artigos' %}">INFECTOLOGIA</a></li>
     <li><a href="{% url 'nefrologia_artigos' %}">NEFROLOGIA</a></li>

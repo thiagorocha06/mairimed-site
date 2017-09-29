@@ -51,6 +51,22 @@
           <h2 id='epidemiologia'>{{ artigo.epidemio_top }}</h2>
           <p>{{ artigo.epidemiologia|linebreaksbr }}</p>
         {% endif %}
+        {% if artigo.epidemio_texto1 %}
+          <h4>{{ artigo.epidemio_top1 }}</h4>
+          <p>{{ artigo.epidemio_texto1|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.epidemio_texto2 %}
+          <h4>{{ artigo.epidemio_top2 }}</h4>
+          <p>{{ artigo.epidemio_texto1|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.epidemio_texto3 %}
+          <h4>{{ artigo.epidemio_top3 }}</h4>
+          <p>{{ artigo.epidemio_texto2|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.epidemio_texto4 %}
+          <h4>{{ artigo.epidemio_top4 }}</h4>
+          <p>{{ artigo.epidemio_texto3|linebreaksbr }}</p>
+        {% endif %}
         {% if artigo.epidemio_figura %}
           <img src="{{ artigo.epidemio_figura.url }}" width="700" />
         {% endif %}
@@ -63,6 +79,22 @@
         {% if artigo.classificacao %}
           <h2 id='classificacao'>{{ artigo.class_top }}</h2>
           <p>{{ artigo.classificacao|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.class_texto1 %}
+          <h4>{{ artigo.class_top1 }}</h4>
+          <p>{{ artigo.class_texto1|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.class_texto2 %}
+          <h4>{{ artigo.class_top2 }}</h4>
+          <p>{{ artigo.class_texto2|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.class_texto3 %}
+          <h4>{{ artigo.class_top3 }}</h4>
+          <p>{{ artigo.class_texto3|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.class_texto4 %}
+          <h4>{{ artigo.class_top4 }}</h4>
+          <p>{{ artigo.class_texto4|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.clas_figura %}
           <img src="{{ artigo.clas_figura.url }}" width="700" />
