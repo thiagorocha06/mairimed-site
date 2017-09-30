@@ -242,10 +242,10 @@
           <h4>{{ artigo.exames_top6|linebreaksbr }}</h4>
           <p>{{ artigo.exames_texto6|linebreaksbr }}</p>
         {% endif %}
-        {% if artigo.diag_figura %}
+        {% if artigo.exames_img1 %}
           <img src="{{ artigo.exames_img1.url }}" width="700" />
         {% endif %}
-        {% if artigo.diag_figura %}
+        {% if artigo.exames_img2 %}
           <img src="{{ artigo.exames_img2.url }}" width="700" />
         {% endif %}
 
