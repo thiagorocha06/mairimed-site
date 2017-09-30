@@ -110,27 +110,27 @@
           <p>{{ artigo.etiologia_fisiopatologia|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.etio_top1 %}
-          <h3>{{ artigo.etio_top1|linebreaksbr }}</h3>
+          <h4>{{ artigo.etio_top1|linebreaksbr }}</h4>
           <p>{{ artigo.etio_texto1|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.etio_top2 %}
-          <h3>{{ artigo.etio_top2|linebreaksbr }}</h3>
+          <h4>{{ artigo.etio_top2|linebreaksbr }}</h4>
           <p>{{ artigo.etio_texto2|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.etio_top3 %}
-          <h3>{{ artigo.etio_top3|linebreaksbr }}</h3>
+          <h4>{{ artigo.etio_top3|linebreaksbr }}</h4>
           <p>{{ artigo.etio_texto3|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.etio_top4 %}
-          <h3>{{ artigo.etio_top4|linebreaksbr }}</h3>
+          <h4>{{ artigo.etio_top4|linebreaksbr }}</h4>
           <p>{{ artigo.etio_texto4|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.etio_top5 %}
-          <h3>{{ artigo.etio_top5|linebreaksbr }}</h3>
+          <h4>{{ artigo.etio_top5|linebreaksbr }}</h4>
           <p>{{ artigo.etio_texto5|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.etio_top6 %}
-          <h3>{{ artigo.etio_top6|linebreaksbr }}</h3>
+          <h4>{{ artigo.etio_top6|linebreaksbr }}</h4>
           <p>{{ artigo.etio_texto6|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.etio_img1 %}
@@ -241,6 +241,12 @@
         {% if artigo.exames_top6 %}
           <h4>{{ artigo.exames_top6|linebreaksbr }}</h4>
           <p>{{ artigo.exames_texto6|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.diag_figura %}
+          <img src="{{ artigo.exames_img1.url }}" width="700" />
+        {% endif %}
+        {% if artigo.diag_figura %}
+          <img src="{{ artigo.exames_img2.url }}" width="700" />
         {% endif %}
 
         <!-- CRITERIOS DIAGNOSTICOS -->
