@@ -133,6 +133,14 @@
           <h4>{{ artigo.etio_top6|linebreaksbr }}</h4>
           <p>{{ artigo.etio_texto6|linebreaksbr }}</p>
         {% endif %}
+        {% if artigo.etio_top7 %}
+          <h4>{{ artigo.etio_top7|linebreaksbr }}</h4>
+          <p>{{ artigo.etio_texto7|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.etio_top8 %}
+          <h4>{{ artigo.etio_top8|linebreaksbr }}</h4>
+          <p>{{ artigo.etio_texto8|linebreaksbr }}</p>
+        {% endif %}
         {% if artigo.etio_img1 %}
           <img src="{{ artigo.etio_img1.url }}" width="700" />
         {% endif %}
@@ -323,6 +331,14 @@
           <h4>{{ artigo.med_top6|linebreaksbr }}</h4>
           <p>{{ artigo.med_texto6|linebreaksbr }}</p>
         {% endif %}
+        {% if artigo.med_top7 %}
+          <h4>{{ artigo.med_top7|linebreaksbr }}</h4>
+          <p>{{ artigo.med_texto7|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.med_top8 %}
+          <h4>{{ artigo.med_top8|linebreaksbr }}</h4>
+          <p>{{ artigo.med_texto8|linebreaksbr }}</p>
+        {% endif %}
 
         {% if artigo.trat_int_top %}
           <h3>{{ artigo.trat_int_top }}</h3>
@@ -347,6 +363,9 @@
         {% if artigo.prognostico_top %}
           <h2 id='prognostico'>{{ artigo.prognostico_top }}</h2>
           <p>{{ artigo.prognostico|linebreaksbr }}</p>
+          {% if artigo.prognostico_img %}
+            <img src="{{ artigo.prognostico_img.url }}" width="700" />
+          {% endif %}
         {% endif %}
 
         <!-- COMPLICACOES -->
