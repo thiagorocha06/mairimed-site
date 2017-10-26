@@ -281,6 +281,30 @@
         {% if artigo.top1 %}
           <h2 id='top1'>{{ artigo.top1|linebreaksbr }}</h2>
           <p>{{ artigo.texto1|linebreaksbr }}</p>
+          {% if artigo.subtop1 %}
+            <h4>{{ artigo.subtop1|linebreaksbr }}</h4>
+            <p>{{ artigo.subtexto1|linebreaksbr }}</p>
+          {% endif %}
+          {% if artigo.subtop2 %}
+            <h4>{{ artigo.subtop2|linebreaksbr }}</h4>
+            <p>{{ artigo.subtexto2|linebreaksbr }}</p>
+          {% endif %}
+          {% if artigo.subtop3 %}
+            <h4>{{ artigo.subtop3|linebreaksbr }}</h4>
+            <p>{{ artigo.subtexto3|linebreaksbr }}</p>
+          {% endif %}
+          {% if artigo.subtop4 %}
+            <h4>{{ artigo.subtop4|linebreaksbr }}</h4>
+            <p>{{ artigo.subtexto4|linebreaksbr }}</p>
+          {% endif %}
+          {% if artigo.subtop5 %}
+            <h4>{{ artigo.subtop5|linebreaksbr }}</h4>
+            <p>{{ artigo.subtexto5|linebreaksbr }}</p>
+          {% endif %}
+          {% if artigo.subtop6 %}
+            <h4>{{ artigo.subtop6|linebreaksbr }}</h4>
+            <p>{{ artigo.subtexto6|linebreaksbr }}</p>
+          {% endif %}
           {% if artigo.top1_img1 %}
             <img src="{{ artigo.top1_img1.url }}" width="700" />
           {% endif %}
@@ -298,11 +322,38 @@
           <h2 id='tratamento_e_manejo'>{{ artigo.tratamento_top }}</h2>
           <p>{{ artigo.tratamento_e_manejo|linebreaksbr }}</p>
         {% endif %}
+
+        <!-- MEDIDAS GERAIS -->
         {% if artigo.medidas_top %}
           <h3>{{ artigo.medidas_top }}</h3>
           <p>{{ artigo.tratamento_nao_medicamentoso|linebreaksbr }}</p>
         {% endif %}
+        {% if artigo.medidas_top1 %}
+          <h4>{{ artigo.medidas_top1 }}</h4>
+          <p>{{ artigo.medidas_texto1|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.medidas_top2 %}
+          <h4>{{ artigo.medidas_top2 }}</h4>
+          <p>{{ artigo.medidas_texto2|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.medidas_top3 %}
+          <h4>{{ artigo.medidas_top3 }}</h4>
+          <p>{{ artigo.medidas_texto3|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.medidas_top4 %}
+          <h4>{{ artigo.medidas_top4 }}</h4>
+          <p>{{ artigo.medidas_texto4|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.medidas_top5 %}
+          <h4>{{ artigo.medidas_top5 }}</h4>
+          <p>{{ artigo.medidas_texto5|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.medidas_top6 %}
+          <h4>{{ artigo.medidas_top6 }}</h4>
+          <p>{{ artigo.medidas_texto6|linebreaksbr }}</p>
+        {% endif %}
 
+        <!-- TRATAMENTO FARMACOLÓGICO -->
         {% if artigo.trat_med_top %}
           <h3>{{ artigo.trat_med_top }}</h3>
           <p>{{ artigo.tratamento_medicamentoso|linebreaksbr }}</p>
@@ -340,9 +391,26 @@
           <p>{{ artigo.med_texto8|linebreaksbr }}</p>
         {% endif %}
 
+        <!-- TRATAMENTO INTERVENCIONISTA -->
         {% if artigo.trat_int_top %}
           <h3>{{ artigo.trat_int_top }}</h3>
           <p>{{ artigo.tratamento_intervencionista|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.trat_int_top1 %}
+          <h4>{{ artigo.trat_int_top1 }}</h4>
+          <p>{{ artigo.trat_int_texto1|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.trat_int_top2 %}
+          <h4>{{ artigo.trat_int_top2 }}</h4>
+          <p>{{ artigo.trat_int_texto2|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.trat_int_top3 %}
+          <h4>{{ artigo.trat_int_top3 }}</h4>
+          <p>{{ artigo.trat_int_texto3|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.trat_int_top4 %}
+          <h4>{{ artigo.trat_int_top4 }}</h4>
+          <p>{{ artigo.trat_int_texto4|linebreaksbr }}</p>
         {% endif %}
 
         {% if artigo.trat_figura %}
@@ -354,7 +422,22 @@
           <h2 id='profilaxia'>{{ artigo.profilaxia_top }}</h2>
           <p>{{ artigo.profilaxia|linebreaksbr }}</p>
         {% endif %}
-
+        {% if artigo.profilaxia_top1 %}
+          <h4>{{ artigo.profilaxia_top1 }}</h4>
+          <p>{{ artigo.profilaxia_texto1|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.profilaxia_top2 %}
+          <h4>{{ artigo.profilaxia_top2 }}</h4>
+          <p>{{ artigo.profilaxia_texto2|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.profilaxia_top3 %}
+          <h4>{{ artigo.profilaxia_top3 }}</h4>
+          <p>{{ artigo.profilaxia_texto3|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.profilaxia_top4 %}
+          <h4>{{ artigo.profilaxia_top4 }}</h4>
+          <p>{{ artigo.profilaxia_texto4|linebreaksbr }}</p>
+        {% endif %}
         {% if artigo.prof_figura %}
           <img src="{{ artigo.prof_figura.url }}" width="700" />
         {% endif %}
