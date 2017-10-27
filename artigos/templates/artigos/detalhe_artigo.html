@@ -38,8 +38,11 @@
           <h4>{{ artigo.intro_top6 }}</h4>
           <p>{{ artigo.intro_texto6|linebreaksbr }}</p>
         {% endif %}
-        {% if artigo.intro_figura %}
-          <img src="{{ artigo.intro_figura.url }}" width="700" />
+        {% if artigo.intro_figura1 %}
+          <img src="{{ artigo.intro_figura1.url }}" width="700" />
+        {% endif %}
+        {% if artigo.intro_figura2 %}
+          <img src="{{ artigo.intro_figura2.url }}" width="700" />
         {% endif %}
 
         <!--
@@ -66,6 +69,10 @@
         {% if artigo.epidemio_top4 %}
           <h4>{{ artigo.epidemio_top4 }}</h4>
           <p>{{ artigo.epidemio_texto4|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.epidemio_top5 %}
+          <h4>{{ artigo.epidemio_top5 }}</h4>
+          <p>{{ artigo.epidemio_texto5|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.epidemio_figura %}
           <img src="{{ artigo.epidemio_figura.url }}" width="700" />
@@ -95,6 +102,10 @@
         {% if artigo.class_texto4 %}
           <h4>{{ artigo.class_top4 }}</h4>
           <p>{{ artigo.class_texto4|linebreaksbr }}</p>
+        {% endif %}
+        {% if artigo.class_texto5 %}
+          <h4>{{ artigo.class_top5 }}</h4>
+          <p>{{ artigo.class_texto5|linebreaksbr }}</p>
         {% endif %}
         {% if artigo.clas_figura %}
           <img src="{{ artigo.clas_figura.url }}" width="700" />

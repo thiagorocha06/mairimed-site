@@ -24,7 +24,8 @@ class Artigo(models.Model):
     intro_texto5 = models.TextField(blank=True, null=True)
     intro_top6 = models.CharField(max_length=200, blank=True, null=True)
     intro_texto6 = models.TextField(blank=True, null=True)
-    intro_figura = models.ImageField(upload_to='img', blank=True, null=True)
+    intro_figura1 = models.ImageField(upload_to='img', blank=True, null=True)
+    intro_figura2 = models.ImageField(upload_to='img', blank=True, null=True)
 
     epidemio_top = models.CharField(max_length=200, blank=True, null=True, default="EPIDEMIOLOGIA")
     epidemiologia = models.TextField(blank=True, null=True)
@@ -36,6 +37,8 @@ class Artigo(models.Model):
     epidemio_texto3 = models.TextField(blank=True, null=True)
     epidemio_top4 = models.CharField(max_length=200, blank=True, null=True)
     epidemio_texto4 = models.TextField(blank=True, null=True)
+    epidemio_top5 = models.CharField(max_length=200, blank=True, null=True)
+    epidemio_texto5 = models.TextField(blank=True, null=True)
     epidemio_figura = models.ImageField(upload_to='img', blank=True, null=True)
 
     class_top = models.CharField(max_length=200, blank=True, null=True, default="CLASSIFICAÇÃO")
@@ -48,6 +51,8 @@ class Artigo(models.Model):
     class_texto3 = models.TextField(blank=True, null=True)
     class_top4 = models.CharField(max_length=200, blank=True, null=True)
     class_texto4 = models.TextField(blank=True, null=True)
+    class_top5 = models.CharField(max_length=200, blank=True, null=True)
+    class_texto5 = models.TextField(blank=True, null=True)
     clas_figura = models.ImageField(upload_to='img', blank=True, null=True)
 
     etio_top = models.CharField(max_length=200, blank=True, null=True, default="ETIOLOGIA E FISIOPATOLOGIA")
