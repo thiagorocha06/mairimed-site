@@ -109,6 +109,7 @@ class Artigo(models.Model):
     ef_texto5 = models.TextField(blank=True, null=True)
     ef_top6 = models.CharField(max_length=200, blank=True, null=True)
     ef_texto6 = models.TextField(blank=True, null=True)
+    ef_figura = models.ImageField(upload_to='img', blank=True, null=True)
 
     exames_top = models.CharField(max_length=200, blank=True, null=True, default="EXAMES COMPLEMENTARES")
     exames_complementares = models.TextField(blank=True, null=True)

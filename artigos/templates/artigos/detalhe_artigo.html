@@ -231,6 +231,9 @@
           <h4>{{ artigo.ef_top6 }}</h4>
           <p>{{ artigo.ef_texto6|linebreaksbr }}</p>
         {% endif %}
+        {% if artigo.ef_figura %}
+          <img src="{{ artigo.ef_figura.url }}" width="700" />
+        {% endif %}
 
         <!-- EXAMES COMPLEMENTARES -->
         {% if artigo.exames_top %}
