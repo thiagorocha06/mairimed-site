@@ -218,6 +218,7 @@ class Artigo(models.Model):
     algoritmo_top = models.CharField(max_length=200, blank=True, null=True, default="ALGORITMO")
     algoritmo_img1 = models.ImageField(upload_to='img', blank=True, null=True)
     algoritmo_img2 = models.ImageField(upload_to='img', blank=True, null=True)
+    algoritmo_img3 = models.ImageField(upload_to='img', blank=True, null=True)
     referencias_top = models.CharField(max_length=200, blank=True, null=True, default="REFERENCIAS")
     referencias = models.TextField(blank=True, null=True)
 
