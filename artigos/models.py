@@ -127,6 +127,7 @@ class Artigo(models.Model):
     exames_texto6 = models.TextField(blank=True, null=True)
     exames_img1 = models.ImageField(upload_to='img', blank=True, null=True)
     exames_img2 = models.ImageField(upload_to='img', blank=True, null=True)
+    exames_img3 = models.ImageField(upload_to='img', blank=True, null=True)
     criterios_top = models.CharField(max_length=200, blank=True, null=True, default="CRITÉRIOS DIAGNÓSTICOS")
     criterios_diagnosticos = models.TextField(blank=True, null=True)
     dd_top = models.CharField(max_length=200, blank=True, null=True, default="DIAGNÓSTICO DIFERENCIAL")
