@@ -209,6 +209,10 @@ class Artigo(models.Model):
     profilaxia_texto3 = models.TextField(blank=True, null=True)
     profilaxia_top4 = models.CharField(max_length=200, blank=True, null=True)
     profilaxia_texto4 = models.TextField(blank=True, null=True)
+    profilaxia_top5 = models.CharField(max_length=200, blank=True, null=True)
+    profilaxia_texto5 = models.TextField(blank=True, null=True)
+    profilaxia_top6 = models.CharField(max_length=200, blank=True, null=True)
+    profilaxia_texto6 = models.TextField(blank=True, null=True)
     prof_figura = models.ImageField(upload_to='img', blank=True, null=True)
 
     prognostico_top = models.CharField(max_length=200, blank=True, null=True, default="PROGNÓSTICO")
